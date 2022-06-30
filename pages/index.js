@@ -37,8 +37,11 @@ const Home = ({ posts }) => {
                   </p>
                   <p className="py-2 text-lg">{post.frontMatter.date}</p>
                   <div>
-                    {post.frontMatter.tags.map((tag) => (
-                      <span className="mr-2 inline-flex items-center rounded-md bg-purple-100 px-2.5 py-0.5 text-sm font-medium text-purple-800">
+                    {post.frontMatter.tags.map((tag, index) => (
+                      <span
+                        className="mr-2 inline-flex items-center rounded-md bg-purple-100 px-2.5 py-0.5 text-sm font-medium text-purple-800"
+                        key={index}
+                      >
                         {tag}
                       </span>
                     ))}
