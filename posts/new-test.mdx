@@ -1,6 +1,12 @@
-import Image from 'next/image'
+---
+title: A Experimental Post
+id: 2
+description: Just playing around with the tech here
+date: 'June 29, 2022'
+tags: ['tailwind', 'mdx']
+---
 
-<div className="m-6 prose lg:prose-xl">
+import Image from 'next/image'
 
 # This is a Heading
 
@@ -12,7 +18,12 @@ This is a list:
 
 ### I will eventually figure out how to wrap all blog pages like this
 
-<Image src="/inma-profile.jpg" height={400} width={400} alt="Pic of my honey" />
+<Image
+  src="/images/inma-profile.jpg"
+  height={400}
+  width={400}
+  alt="Pic of my honey"
+/>
 
 > This is a quote from me.
 
@@ -21,5 +32,3 @@ This is a list:
 I am getting the hang of this now, I think.
 
 [GitHub](https://github.com)
-
-</div>
