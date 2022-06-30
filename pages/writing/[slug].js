@@ -8,8 +8,8 @@ import Image from 'next/image'
 const components = { Image }
 const PostPage = ({ frontMatter: { title, date }, mdxSource }) => {
   return (
-    <div className="m-10 prose lg:prose-xl">
-      <h1>{title}</h1>
+    <div className="py-6 mx-auto mt-10 prose lg:prose-xl">
+      <h1 className="capitalize">{title}</h1>
       <p>{date}</p>
       <MDXRemote {...mdxSource} components={components} />
     </div>
