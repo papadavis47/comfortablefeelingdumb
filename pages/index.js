@@ -4,7 +4,6 @@ import Link from 'next/link'
 import fs from 'fs'
 import * as path from 'path'
 import matter from 'gray-matter'
-import { cwd } from 'process'
 
 const Home = ({ posts }) => {
   return (
