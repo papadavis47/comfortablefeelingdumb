@@ -4,6 +4,7 @@ import Link from 'next/link'
 import fs from 'fs'
 import * as path from 'path'
 import matter from 'gray-matter'
+import readingTime from 'reading-time'
 
 const Home = ({ posts }) => {
   return (
@@ -32,10 +33,13 @@ const Home = ({ posts }) => {
                       {post.frontMatter.title}
                     </h1>
                   </Link>
+                  <p className="py-2 text-md text-stone-600">
+                    {post.frontMatter.date}
+                  </p>
                   <p className="pb-2 text-xl">
                     "{post.frontMatter.description}"
                   </p>
-                  <p className="py-2 text-lg">{post.frontMatter.date}</p>
+                  <p>{post.readingTime}</p>
                   <div>
                     {post.frontMatter.tags.map((tag, index) => (
                       <span
@@ -67,6 +71,7 @@ export const getStaticProps = async () => {
     return {
       frontMatter,
       slug: filename.split('.')[0],
+      readingTime: readingTime(mdxWithMeta).text,
     }
   })
 

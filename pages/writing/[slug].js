@@ -3,14 +3,16 @@ import path from 'path'
 import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
+import readingTime from 'reading-time'
 // import CoolHeading from '../components/CoolHeading'
 import Image from 'next/image'
 const components = { Image }
-const PostPage = ({ frontMatter: { title, date }, mdxSource }) => {
+const PostPage = ({ frontMatter: { title, date }, mdxSource, readingTime }) => {
   return (
     <div className="py-6 mx-auto mt-10 prose lg:prose-xl">
       <h1 className="capitalize">{title}</h1>
       <p>{date}</p>
+      <p>{readingTime}</p>
       <MDXRemote {...mdxSource} components={components} />
     </div>
   )
@@ -47,6 +49,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       frontMatter,
       slug,
       mdxSource,
+      readingTime: readingTime(content).text,
     },
   }
 }
