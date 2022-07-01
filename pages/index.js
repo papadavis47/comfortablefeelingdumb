@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Footer from '../components/Footer'
 import Link from 'next/link'
 import fs from 'fs'
 import * as path from 'path'
@@ -8,18 +7,13 @@ import readingTime from 'reading-time'
 
 const Home = ({ posts }) => {
   return (
-    <div className="flex flex-col items-center min-h-screen py-2 mt-10">
-      <Head>
-        <title>Comfortable Feeling Dumb</title>
-        <link rel="icon" href="/surfing.ico" />
-      </Head>
-
+    <div className="flex flex-col items-center py-2 mt-10">
       <main className="flex flex-col items-center justify-start flex-1 w-full px-20">
         <div>
-          <h1 className="text-3xl font-bold text-stone-700 md:text-4xl lg:text-5xl">
+          <h1 className="text-5xl font-bold text-orange-700">
             Comfortable Feeling Dumb
           </h1>
-          <h2 className="py-4 text-3xl font-bold text-center text-stone-700 lg:text-4xl">
+          <h2 className="py-4 text-xl font-bold text-yellow-900 sm:text-center lg:text-2xl">
             A Programming Blog
           </h2>
         </div>
@@ -29,17 +23,19 @@ const Home = ({ posts }) => {
               <div className="my-4 " key={post.frontMatter.id}>
                 <div className="flex flex-col ">
                   <Link href={'/writing/' + post.slug}>
-                    <h1 className="py-2 text-2xl font-bold capitalize cursor-pointer">
+                    <h1 className="py-2 text-2xl font-bold capitalize cursor-pointer text-violet-700">
                       {post.frontMatter.title}
                     </h1>
                   </Link>
                   <p className="py-2 text-md text-stone-600">
                     {post.frontMatter.date}
                   </p>
-                  <p className="pb-2 text-xl">
-                    "{post.frontMatter.description}"
+                  <p className="pb-2 text-xl italic font-bold text-indigo-700">
+                    {post.frontMatter.description}
                   </p>
-                  <p>{post.readingTime}</p>
+                  <p className="mb-4 text-md text-stone-600">
+                    {post.readingTime}
+                  </p>
                   <div>
                     {post.frontMatter.tags.map((tag, index) => (
                       <span
@@ -56,7 +52,6 @@ const Home = ({ posts }) => {
           })}
         </div>
       </main>
-      <Footer />
     </div>
   )
 }

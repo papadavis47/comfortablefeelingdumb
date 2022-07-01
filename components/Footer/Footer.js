@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-center w-full py-4 border-t-4 border-t-stone-300 text-stone-700">
+    <footer className="flex flex-col items-center justify-center w-full py-4 text-yellow-900 shadow-lg bg-indigo-50">
       <div className="py-4">
         <p>
           <a
