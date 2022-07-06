@@ -4,17 +4,24 @@ import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import readingTime from 'reading-time'
+import Head from 'next/head.js'
 // import CoolHeading from '../components/CoolHeading'
 import Image from 'next/image'
 const components = { Image }
 const PostPage = ({ frontMatter: { title, date }, mdxSource, readingTime }) => {
   return (
-    <div className="py-6 mx-auto mt-10 prose lg:prose-xl">
-      <h1 className="capitalize">{title}</h1>
-      <p>{date}</p>
-      <p>{readingTime}</p>
-      <MDXRemote {...mdxSource} components={components} />
-    </div>
+    <>
+      <Head>
+        <title>CFD - {title}</title>
+        <link rel="icon" href="/water_wave.ico" />
+      </Head>
+      <div className="py-6 mx-auto mt-10 prose lg:prose-xl">
+        <h1 className="capitalize">{title}</h1>
+        <p>{date}</p>
+        <p>{readingTime}</p>
+        <MDXRemote {...mdxSource} components={components} />
+      </div>
+    </>
   )
 }
 

@@ -3,22 +3,23 @@ import * as path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
 import PostList from '../components/PostList'
+import LandingTitle from '../components/LandingTitle'
+import Head from 'next/head.js'
 
 const Home = ({ posts }) => {
   return (
-    <div className="flex flex-col items-center py-2 mt-6">
-      <main className="flex flex-col items-center justify-start flex-1 w-full px-6 md:px-20">
-        <div className="text-neutral-800">
-          <h1 className="text-5xl italic font-bold">
-            Comfortable Feeling Dumb
-          </h1>
-          <h2 className="py-4 text-xl font-bold sm:text-center lg:text-2xl">
-            A Blog About Web Development
-          </h2>
-        </div>
-        <PostList posts={posts} />
-      </main>
-    </div>
+    <>
+      <Head>
+        <title>Comfortable Feeling Dumb</title>
+        <link rel="icon" href="/water_wave.ico" />
+      </Head>
+      <div className="flex flex-col items-center py-2 mt-6">
+        <main className="flex flex-col items-center justify-start flex-1 w-full px-6 md:px-20">
+          <LandingTitle />
+          <PostList posts={posts} />
+        </main>
+      </div>
+    </>
   )
 }
 
