@@ -1,9 +1,8 @@
-import Head from 'next/head'
 import fs from 'fs'
 import * as path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
-import PostListItem from '../components/PostListItem'
+import PostList from '../components/PostList'
 
 const Home = ({ posts }) => {
   return (
@@ -17,11 +16,7 @@ const Home = ({ posts }) => {
             A Blog About Web Development
           </h2>
         </div>
-        <div className="flex flex-col w-full pt-4 pb-10 mt-2 mb-12 sm:max-w-4xl sm:pt-8">
-          {posts.map((post) => {
-            return <PostListItem {...post} key={post.frontMatter.id} />
-          })}
-        </div>
+        <PostList posts={posts} />
       </main>
     </div>
   )
