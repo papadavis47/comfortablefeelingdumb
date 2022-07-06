@@ -6,7 +6,7 @@ import PostList from '../components/PostList'
 import LandingTitle from '../components/LandingTitle'
 import Head from 'next/head.js'
 
-const Home = ({ posts }) => {
+const Home = ({ posts, subjects }) => {
   return (
     <>
       <Head>
@@ -18,6 +18,11 @@ const Home = ({ posts }) => {
           <LandingTitle />
           <PostList posts={posts} />
         </main>
+      </div>
+      <div>
+        {subjects?.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
       </div>
     </>
   )
@@ -37,9 +42,12 @@ export const getStaticProps = async () => {
     }
   })
 
+  const allTags = posts.map((post) => post.frontMatter.tags)
+
   return {
     props: {
       posts,
+      subjects: [...new Set(allTags.flat())],
     },
   }
 }
