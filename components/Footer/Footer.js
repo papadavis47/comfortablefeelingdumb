@@ -11,7 +11,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            &copy;John William Davis 2022
+            &copy;2022
           </a>
         </p>
         <p className="mt-2">

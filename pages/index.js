@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import readingTime from 'reading-time'
 import PostList from '../components/PostList'
 import LandingTitle from '../components/LandingTitle'
+import SubjectsList from '../components/SubjectsList'
 import Head from 'next/head.js'
 
 const Home = ({ posts, subjects }) => {
@@ -17,12 +18,8 @@ const Home = ({ posts, subjects }) => {
         <main className="flex flex-col items-center justify-start flex-1 w-full px-6 md:px-20">
           <LandingTitle />
           <PostList posts={posts} />
+          <SubjectsList subjects={subjects} />
         </main>
-      </div>
-      <div>
-        {subjects?.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
       </div>
     </>
   )
