@@ -10,7 +10,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
         </Head>
-        <body className="font-sans">
+        <body>
           <Main />
           <NextScript />
         </body>
