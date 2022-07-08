@@ -9,11 +9,15 @@ function PostListItem({ frontMatter, readingTime, slug }) {
             {frontMatter.title}
           </h1>
         </Link>
-        <p className="py-2 italic text-md text-stone-500">{frontMatter.date}</p>
-        <p className="pb-2 text-xl italic font-bold text-neutral-700">
+        <p className="py-2 font-semibold text-md text-stone-500">
+          {frontMatter.date}
+        </p>
+        <p className="pb-2 text-xl italic font-semibold text-neutral-700">
           {frontMatter.description}
         </p>
-        <p className="mb-4 text-md text-neutral-500">{readingTime}</p>
+        <p className="mb-4 font-semibold text-md text-neutral-500">
+          {readingTime}
+        </p>
         <div>
           {frontMatter.tags.map((tag, index) => (
             <span
