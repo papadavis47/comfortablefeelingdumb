@@ -30,7 +30,7 @@ export const getStaticPaths = async () => {
   const paths = files.map((filename) => {
     return {
       params: {
-        slug: filename.replace('.mdx', ''),
+        slug: filename,
       },
     }
   })
@@ -43,7 +43,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const mdxWithMeta = fs.readFileSync(
-    path.join('posts', slug + '.mdx'),
+    path.join('posts', slug, 'index.mdx'),
     'utf-8'
   )
 

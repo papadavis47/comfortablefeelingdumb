@@ -29,12 +29,15 @@ export const getStaticProps = async () => {
   const files = fs.readdirSync(path.join('posts'))
 
   const posts = files.map((filename) => {
-    const mdxWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+    const mdxWithMeta = fs.readFileSync(
+      path.join('posts', filename, 'index.mdx'),
+      'utf-8'
+    )
     const { data: frontMatter } = matter(mdxWithMeta)
 
     return {
       frontMatter,
-      slug: filename.split('.')[0],
+      slug: filename,
       readingTime: readingTime(mdxWithMeta).text,
     }
   })
