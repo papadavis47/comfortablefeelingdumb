@@ -5,9 +5,12 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=optional"
+            rel="stylesheet"
+          ></link>
         </Head>
-        <body>
+        <body className="font-sans">
           <Main />
           <NextScript />
         </body>
