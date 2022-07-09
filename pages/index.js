@@ -1,11 +1,8 @@
-import fs from 'fs'
-import * as path from 'path'
-import matter from 'gray-matter'
-import readingTime from 'reading-time'
 import PostList from '../components/PostList'
 import LandingTitle from '../components/LandingTitle'
 import SubjectsList from '../components/SubjectsList'
 import Head from 'next/head.js'
+import { getAllPosts } from '../utils/tools.js'
 
 const Home = ({ posts, subjects }) => {
   return (
@@ -25,26 +22,8 @@ const Home = ({ posts, subjects }) => {
   )
 }
 
-export const getAllPosts = () => {
-  console.log('working on this')
-}
-
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join('posts'))
-
-  const posts = files.map((filename) => {
-    const mdxWithMeta = fs.readFileSync(
-      path.join('posts', filename, 'index.mdx'),
-      'utf-8'
-    )
-    const { data: frontMatter } = matter(mdxWithMeta)
-
-    return {
-      frontMatter,
-      slug: filename,
-      readingTime: readingTime(mdxWithMeta).text,
-    }
-  })
+  const posts = getAllPosts()
 
   const allTags = posts.map((post) => post.frontMatter.tags)
 

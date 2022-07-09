@@ -1,8 +1,6 @@
-import fs from 'fs'
-import * as path from 'path'
-import matter from 'gray-matter'
 import PostList from '../../components/PostList'
-import readingTime from 'reading-time'
+import { getAllPosts } from '../../utils/tools.js'
+import { getFrontMatterOnly } from '../../utils/tools.js'
 
 const SubjectPage = ({ filteredPosts }) => {
   return (
@@ -17,23 +15,8 @@ const SubjectPage = ({ filteredPosts }) => {
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join('posts'))
-
-  const posts = files.map((filename) => {
-    const mdxWithMeta = fs.readFileSync(
-      path.join('posts', filename, 'index.mdx'),
-      'utf-8'
-    )
-
-    const { data: frontMatter } = matter(mdxWithMeta)
-
-    return {
-      frontMatter,
-    }
-  })
-
-  const allTags = posts.map((post) => post.frontMatter.tags)
-  const paths = [...new Set(allTags.flat())].map((tag) => {
+  const posts = getFrontMatterOnly().map((post) => post.frontMatter.tags)
+  const paths = [...new Set(posts.flat())].map((tag) => {
     return {
       params: { tag },
     }
@@ -46,24 +29,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const files = fs.readdirSync(path.join('posts'))
-
-  const filteredPosts = files
-    .map((filename) => {
-      const mdxWithMeta = fs.readFileSync(
-        path.join('posts', filename, 'index.mdx'),
-        'utf-8'
-      )
-
-      const { data: frontMatter } = matter(mdxWithMeta)
-
-      return {
-        frontMatter,
-        slug: filename,
-        readingTime: readingTime(mdxWithMeta).text,
-      }
-    })
-    .filter((post) => post.frontMatter.tags.includes(params.tag))
+  const filteredPosts = getAllPosts().filter((post) =>
+    post.frontMatter.tags.includes(params.tag)
+  )
 
   return {
     props: {
