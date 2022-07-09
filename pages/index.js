@@ -25,6 +25,10 @@ const Home = ({ posts, subjects }) => {
   )
 }
 
+export const getAllPosts = () => {
+  console.log('working on this')
+}
+
 export const getStaticProps = async () => {
   const files = fs.readdirSync(path.join('posts'))
 
