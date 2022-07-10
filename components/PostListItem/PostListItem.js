@@ -21,7 +21,7 @@ function PostListItem({ frontMatter, readingTime, slug }) {
         <div>
           {frontMatter.tags.map((tag, index) => (
             <Link href={`/subject/${tag}`} key={index}>
-              <span className="mr-2 inline-flex cursor-pointer items-center rounded-md bg-neutral-100 px-2.5 py-0.5 text-sm font-medium lowercase text-neutral-800">
+              <span className="mr-2 mt-2 inline-flex cursor-pointer items-center rounded-md bg-neutral-100 px-2.5 py-0.5 text-sm font-medium lowercase text-neutral-800">
                 {tag}
               </span>
             </Link>
