@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 function SubjectsList({ subjects }) {
   return (
-    <div className="flex flex-wrap w-full pb-12 mb-6 sm:max-w-4xl">
+    <div className="mb-6 flex w-full flex-wrap pb-12 sm:max-w-4xl">
       {subjects?.map((item, index) => (
         <Link href={`/subject/${item}`} key={index}>
           <button
