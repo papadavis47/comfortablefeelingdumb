@@ -8,8 +8,8 @@ import Link from 'next/link'
 
 function NavBar() {
   return (
-    <nav className="sticky w-full px-6 py-4 pt-4 mx-auto mt-4 mb-10 bg-transparent border-b-4 rounded-lg shadow-lg top-4 backdrop-blur-md sm:w-1/2">
-      <div className="flex justify-between sm:mx-auto sm:max-w-7xl">
+    <nav className="sticky w-full px-6 py-4 pt-4 mx-auto mt-4 mb-10 rounded-lg shadow-lg top-4 backdrop-blur-md sm:w-1/2">
+      <div className="flex justify-between bg-transparent sm:mx-auto sm:max-w-7xl">
         {/* left */}
         <div>
           <Link href="/">
