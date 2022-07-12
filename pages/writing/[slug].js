@@ -16,7 +16,9 @@ const PostPage = ({ frontMatter: { title, date }, mdxSource, readingTime }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="px-6 pt-6 pb-10 mx-auto my-10 prose lg:prose-xl">
-        <h1 className="capitalize">{title}</h1>
+        <h1 className="pb-2 font-extrabold text-transparent capitalize not-prose bg-gradient-to-l from-frenchAzraq to-deepRose bg-clip-text lg:text-6xl">
+          {title}
+        </h1>
         <p>{date}</p>
         <p>{readingTime}</p>
         <MDXRemote {...mdxSource} components={components} />
