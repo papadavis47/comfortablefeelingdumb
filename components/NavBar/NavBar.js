@@ -9,7 +9,7 @@ import Link from 'next/link'
 function NavBar() {
   return (
     <nav className="sticky w-full px-6 py-4 pt-4 mx-auto mt-4 mb-10 rounded-lg shadow-lg top-4 backdrop-blur-md sm:w-1/2">
-      <div className="flex justify-between bg-transparent sm:mx-auto sm:max-w-7xl">
+      <div className="flex justify-between bg-transparent text-darkSapphire sm:mx-auto sm:max-w-7xl">
         {/* left */}
         <div>
           <Link href="/">
@@ -19,7 +19,7 @@ function NavBar() {
           </Link>
         </div>
         {/* middle */}
-        <div className="flex items-center space-x-5 text-neutral-700">
+        <div className="flex items-center space-x-5">
           <a
             href="https://twitter.com/papadavis47"
             target="_blank"

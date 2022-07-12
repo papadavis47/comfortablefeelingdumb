@@ -2,10 +2,10 @@ import Link from 'next/link'
 
 function PostListItem({ frontMatter, readingTime, slug }) {
   return (
-    <div className="my-4">
+    <div className="p-6 my-4 bg-white border-l-8 rounded-lg shadow-lg border-softBlue">
       <div className="flex flex-col ">
         <Link href={`/writing/${slug}`}>
-          <h1 className="pt-2 text-2xl font-bold capitalize cursor-pointer text-neutral-700">
+          <h1 className="pt-2 text-4xl font-bold capitalize cursor-pointer text-frenchAzraq">
             {frontMatter.title}
           </h1>
         </Link>
@@ -22,7 +22,7 @@ function PostListItem({ frontMatter, readingTime, slug }) {
         <div>
           {frontMatter.tags.map((tag, index) => (
             <Link href={`/subject/${tag}`} key={index}>
-              <span className="mr-2 mt-2 inline-flex cursor-pointer items-center rounded-md bg-neutral-100 px-2.5 py-0.5 text-sm font-medium lowercase text-neutral-800">
+              <span className="inline-flex items-center px-3 py-1 mt-2 mr-2 text-sm font-medium text-white lowercase rounded-md cursor-pointer bg-frenchAzraq">
                 {tag}
               </span>
             </Link>
