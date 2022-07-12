@@ -13,9 +13,9 @@ const PostPage = ({ frontMatter: { title, date }, mdxSource, readingTime }) => {
     <>
       <Head>
         <title>CFD - {title}</title>
-        <link rel="icon" href="/water_wave.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="px-6 py-6 mx-auto mt-10 prose lg:prose-xl">
+      <div className="px-6 pt-6 pb-10 mx-auto my-10 prose lg:prose-xl">
         <h1 className="capitalize">{title}</h1>
         <p>{date}</p>
         <p>{readingTime}</p>
