@@ -7,6 +7,8 @@ import readingTime from 'reading-time'
 import Head from 'next/head.js'
 // import CoolHeading from '../components/CoolHeading'
 import Image from 'next/image'
+import Thanks from '../../components/Thanks/Thanks.js'
+
 const components = { Image }
 const PostPage = ({ frontMatter: { title, date }, mdxSource, readingTime }) => {
   return (
@@ -22,6 +24,7 @@ const PostPage = ({ frontMatter: { title, date }, mdxSource, readingTime }) => {
         <p>{date}</p>
         <p>{readingTime}</p>
         <MDXRemote {...mdxSource} components={components} />
+        <Thanks />
       </div>
     </>
   )

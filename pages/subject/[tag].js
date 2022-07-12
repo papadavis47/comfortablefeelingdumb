@@ -1,6 +1,6 @@
 import PostList from '../../components/PostList'
-import { getAllPosts } from '../../utils/tools.js'
-import { getFrontMatterOnly } from '../../utils/tools.js'
+import { getAllPosts } from '../../utils/dataFetching.js'
+import { getFrontMatterOnly } from '../../utils/dataFetching.js'
 
 const SubjectPage = ({ filteredPosts }) => {
   return (
