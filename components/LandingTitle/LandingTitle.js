@@ -5,7 +5,7 @@ function LandingTitle() {
         Comfortable Feeling Dumb
       </h1>
       <h2 className="py-4 text-2xl italic font-bold opacity-75 text-purpleMountain md:text-center lg:text-4xl">
-        A Programming Blog
+        A Blog About Web Development
       </h2>
     </div>
   )

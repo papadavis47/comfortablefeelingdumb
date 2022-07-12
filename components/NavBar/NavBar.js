@@ -3,7 +3,6 @@ import { VscTwitter, VscGithubInverted } from 'react-icons/vsc'
 import { ImHome } from 'react-icons/im'
 import { SiStackoverflow } from 'react-icons/si'
 import { CgDetailsMore } from 'react-icons/cg'
-import Image from 'next/image'
 import Link from 'next/link'
 
 function NavBar() {
