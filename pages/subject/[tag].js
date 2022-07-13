@@ -1,11 +1,13 @@
 import PostList from '../../components/PostList'
 import { getAllPosts } from '../../utils/dataFetching.js'
 import { getFrontMatterOnly } from '../../utils/dataFetching.js'
+import FilteredTitle from '../../components/FilteredTitle'
 
-const SubjectPage = ({ filteredPosts }) => {
+const SubjectPage = ({ filteredPosts, subject }) => {
   return (
     <>
       <div className="flex flex-col items-center py-2 mt-6">
+        <FilteredTitle subject={subject} />
         <main className="flex flex-col items-center justify-start flex-1 w-full px-6 md:px-20">
           <PostList posts={filteredPosts} />
         </main>
@@ -29,13 +31,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const subject = params.tag
   const filteredPosts = getAllPosts().filter((post) =>
-    post.frontMatter.tags.includes(params.tag)
+    post.frontMatter.tags.includes(subject)
   )
 
   return {
     props: {
       filteredPosts,
+      subject,
     },
   }
 }
