@@ -5,7 +5,7 @@ function Thanks() {
     <div>
       <p className="font-semibold">Thanks for reading!</p>
       <Link href="/">
-        <p className="flex items-center cursor-pointer">
+        <p className="flex items-center cursor-pointer max-w-fit">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6 "

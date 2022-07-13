@@ -5,7 +5,7 @@ function PostListItem({ frontMatter, readingTime, slug }) {
     <div className="p-6 my-4 bg-white border-l-8 rounded-lg shadow-lg border-softBlue">
       <div className="flex flex-col ">
         <Link href={`/writing/${slug}`}>
-          <h1 className="pt-2 text-2xl font-bold capitalize cursor-pointer text-frenchAzraq">
+          <h1 className="pt-2 text-2xl font-bold capitalize cursor-pointer text-frenchAzraq hover:text-purpleMountain">
             {frontMatter.title}
           </h1>
         </Link>
