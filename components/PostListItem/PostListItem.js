@@ -9,7 +9,7 @@ function PostListItem({ frontMatter, readingTime, slug }) {
             {frontMatter.title}
           </h1>
         </Link>
-        <p className="py-2 font-semibold text-md text-stone-500">
+        <p className="py-2 font-semibold text-md text-neutral-500">
           {frontMatter.date}
         </p>
         <p className="pb-2 text-lg italic font-semibold text-neutral-600 sm:text-xl">

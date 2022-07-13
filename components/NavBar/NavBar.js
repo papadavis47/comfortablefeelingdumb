@@ -30,11 +30,11 @@ function NavBar() {
 
   return (
     <nav
-      className={`sticky z-50 ${
+      className={`sticky z-50 bg-white ${
         isVisible ? 'top-4' : '-top-20'
-      } mx-auto mt-4 mb-10 w-full rounded-lg px-6 py-4 pt-4 shadow-lg backdrop-blur-md transition ease-linear sm:w-1/2`}
+      } mx-auto mt-4 mb-10 w-full rounded-lg border-2 px-6 py-4 pt-4 shadow-lg backdrop-blur-md transition ease-linear sm:w-1/2`}
     >
-      <div className="flex justify-between bg-transparent text-darkSapphire sm:mx-auto sm:max-w-7xl">
+      <div className="flex justify-between text-darkSapphire sm:mx-auto sm:max-w-7xl">
         {/* left */}
         <div>
           <Link href="/">
