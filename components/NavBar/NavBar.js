@@ -6,7 +6,7 @@ import { CgDetailsMore } from 'react-icons/cg'
 import { debounce } from '../../utils/debounce.js'
 import Link from 'next/link'
 
-function NavBar() {
+function NavBar({ toggleModal, modalShown, setModalShown }) {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
 
@@ -70,7 +70,7 @@ function NavBar() {
         {/* right */}
         <div>
           <Link href="#">
-            <a>
+            <a onClick={() => toggleModal()}>
               <CgDetailsMore size={30} />
             </a>
           </Link>
