@@ -5,11 +5,11 @@ import { useState } from 'react'
 import Modal from '../Modal'
 
 function Layout({ children }) {
-  let [isOpen, setIsOpen] = useState(true)
-  let [modalShown, setModalShown] = useState(false)
+  let [isOpen, setIsOpen] = useState(false)
+  let [show, setShow] = useState(false)
 
   function toggleModal() {
-    setModalShown(!modalShown)
+    isOpen ? setIsOpen(false) : setIsOpen(true)
   }
 
   function closeModal() {
@@ -21,19 +21,8 @@ function Layout({ children }) {
   }
   return (
     <div className="flex flex-col min-h-screen bg-stone-50">
-      {modalShown && (
-        <Modal
-          setIsOpen={setIsOpen}
-          isOpen={isOpen}
-          closeModal={closeModal}
-          openModal={openModal}
-        />
-      )}
-      <NavBar
-        toggleModal={toggleModal}
-        modalShown={modalShown}
-        setModalShown={setModalShown}
-      />
+      {isOpen ? <Modal isOpen={isOpen} closeModal={closeModal} /> : null}
+      <NavBar toggleModal={toggleModal} setIsOpen={setIsOpen} />
       <section className="flex-1">{children}</section>
       <Footer />
     </div>
