@@ -31,21 +31,24 @@ function Modal({ closeModal, isOpen }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="max-w-5xl p-6 text-center align-middle transition-all transform bg-white shadow-xl h-72 rounded-2xl">
+                <Dialog.Panel className="max-w-5xl p-6 text-center align-middle transition-all transform bg-white shadow-xl h-96 rounded-xl md:h-80">
                   <Dialog.Title
                     as="h3"
-                    className="text-xl font-medium leading-6 text-gray-900"
+                    className="mt-6 text-xl font-medium leading-6 text-gray-900"
                   >
                     About This Blog
                   </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-lg text-left text-gray-500 sm:text-justify">
+                  <div className="mt-6">
+                    <p className="text-left text-gray-500 text-md sm:text-justify md:text-lg">
                       Go beyond what is comfortable in learning. It is only by
-                      stressing the system that one responds.
+                      stressing the system that the brain and the body respond.
+                      So, discomfort is a good thing and that which makes us
+                      grow. This is a going to be my message here. Where I
+                      explain my blog and I go into why I am writing it.
                     </p>
                   </div>
 
-                  <div className="mt-16">
+                  <div className="mt-6 md:mt-12">
                     <button
                       type="button"
                       className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"

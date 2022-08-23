@@ -6,23 +6,19 @@ import Modal from '../Modal'
 
 function Layout({ children }) {
   let [isOpen, setIsOpen] = useState(false)
-  let [show, setShow] = useState(false)
 
   function toggleModal() {
-    isOpen ? setIsOpen(false) : setIsOpen(true)
+    setIsOpen(!isOpen)
   }
 
   function closeModal() {
     setIsOpen(false)
   }
-
-  function openModal() {
-    setIsOpen(true)
-  }
   return (
     <div className="flex flex-col min-h-screen bg-stone-50">
       {isOpen ? <Modal isOpen={isOpen} closeModal={closeModal} /> : null}
-      <NavBar toggleModal={toggleModal} setIsOpen={setIsOpen} />
+
+      <NavBar toggleModal={toggleModal} isOpen={isOpen} />
       <section className="flex-1">{children}</section>
       <Footer />
     </div>
