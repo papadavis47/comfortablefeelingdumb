@@ -31,20 +31,30 @@ function Modal({ closeModal, isOpen }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="max-w-5xl p-6 text-center align-middle transition-all transform bg-white shadow-xl h-96 rounded-xl md:h-80">
+                <Dialog.Panel className="h-auto max-w-5xl p-6 px-10 text-center align-middle transition-all transform bg-white shadow-xl rounded-xl">
                   <Dialog.Title
                     as="h3"
-                    className="mt-6 text-xl font-medium leading-6 text-gray-900"
+                    className="mt-6 text-2xl font-semibold leading-6 text-gray-900 md:text-3xl"
                   >
                     About This Blog
                   </Dialog.Title>
                   <div className="mt-6">
-                    <p className="text-left text-gray-500 text-md sm:text-justify md:text-lg">
-                      Go beyond what is comfortable in learning. It is only by
-                      stressing the system that the brain and the body respond.
-                      So, discomfort is a good thing and that which makes us
-                      grow. This is a going to be my message here. Where I
-                      explain my blog and I go into why I am writing it.
+                    <p className="text-sm italic text-left text-gray-900 sm:text-justify md:px-10 md:text-lg">
+                      These articles are part of my quest to go beyond what is
+                      "comfortable" in my journey as a developer. I want to
+                      become comfortable with always being at the edge of my
+                      knowledge - pushing where the limit of where comfort ends
+                      and "struggle" begins. As in long distance running, the
+                      "discomfort" is temporary - until the challenging part of
+                      the run has passed or until the problem in the code is
+                      solved. As a dev in a rapidly changing profession - I have
+                      found that for me the best way to handle the discomfort is
+                      to get comfortable with the feeling and simply live there
+                      everyday - &nbsp;
+                      <span className="font-bold">
+                        because there is no finish line
+                      </span>
+                      .
                     </p>
                   </div>
 
@@ -54,7 +64,7 @@ function Modal({ closeModal, isOpen }) {
                       className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
-                      Close Message
+                      Close
                     </button>
                   </div>
                 </Dialog.Panel>
