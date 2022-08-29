@@ -41,20 +41,16 @@ function Modal({ closeModal, isOpen }) {
                   <div className="mt-6">
                     <p className="text-sm italic text-left text-gray-900 sm:text-justify md:px-10 md:text-lg">
                       These articles are part of my quest to go beyond what is
-                      "comfortable" in my journey as a developer. I want to
-                      become comfortable with always being at the edge of my
-                      knowledge - pushing where the limit of where comfort ends
-                      and "struggle" begins. As in long distance running, the
-                      "discomfort" is temporary - until the challenging part of
-                      the run has passed or until the problem in the code is
-                      solved. As a dev in a rapidly changing profession - I have
-                      found that for me the best way to handle the discomfort is
-                      to get comfortable with the feeling and simply live there
-                      everyday - &nbsp;
-                      <span className="font-bold">
-                        because there is no finish line
-                      </span>
-                      .
+                      "comfortable" for me as a developer. I want to become
+                      comfortable with being at the edge of my knowledge -
+                      pushing the limits of where comfort ends and "struggle"
+                      begins. Similar to my experience in long distance running
+                      - I have found that the "discomfort" is temporary - until
+                      the challenging part of the run has passed or until the
+                      problem in the code is solved. As a dev in a rapidly
+                      changing profession - I find that for me the best way to
+                      handle the discomfort is to get comfortable with the
+                      feeling and simply live there everyday.
                     </p>
                   </div>
 
