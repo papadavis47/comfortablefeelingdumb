@@ -36,7 +36,7 @@ function NavBar({ toggleModal, isOpen }) {
     >
       <div className="flex justify-between text-darkSapphire sm:mx-auto sm:max-w-7xl">
         {/* left */}
-        <div>
+        <div className="hover:text-rose-900">
           <Link href="/">
             <a>
               <ImHome size={30} />
@@ -49,12 +49,14 @@ function NavBar({ toggleModal, isOpen }) {
             href="https://twitter.com/papadavis47"
             target="_blank"
             rel="noreferrer"
+            className="hover:text-rose-900"
           >
             <VscTwitter size={30} />
           </a>
           <a
             href="https://github.com/papadavis47"
             target="_blank"
+            className="hover:text-rose-900"
             rel="noreferrer"
           >
             <VscGithubInverted size={30} />
@@ -63,13 +65,14 @@ function NavBar({ toggleModal, isOpen }) {
             href="https://stackoverflow.com/users/9111781/jwdavis"
             target="_blank"
             rel="noreferrer"
+            className="hover:text-rose-900"
           >
             <SiStackoverflow size={30} />
           </a>
         </div>
         {/* right */}
         <div className={`${isOpen ? 'invisible' : null}`}>
-          <button onClick={toggleModal}>
+          <button className="hover:text-rose-900" onClick={toggleModal}>
             <CgDetailsMore size={30} />
           </button>
         </div>
