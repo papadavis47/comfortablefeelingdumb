@@ -1,7 +1,7 @@
 import PostList from '../components/PostList'
 import LandingTitle from '../components/LandingTitle'
 import SubjectsList from '../components/SubjectsList'
-import Head from 'next/head.js'
+import Head from 'next/head'
 import { getAllPosts } from '../utils/dataFetching.js'
 
 const Home = ({ posts, subjects }) => {
@@ -9,6 +9,10 @@ const Home = ({ posts, subjects }) => {
     <>
       <Head>
         <title>Comfortable Feeling Dumb</title>
+        <meta
+          name="description"
+          content="A Blog About Web Development And Distance Running"
+        ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col items-center py-2 mt-6">

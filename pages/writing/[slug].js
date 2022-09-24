@@ -4,17 +4,22 @@ import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import readingTime from 'reading-time'
-import Head from 'next/head.js'
+import Head from 'next/head'
 // import CoolHeading from '../components/CoolHeading'
 import Image from 'next/image'
 import Thanks from '../../components/Thanks/Thanks.js'
 
 const components = { Image }
-const PostPage = ({ frontMatter: { title, date }, mdxSource, readingTime }) => {
+const PostPage = ({
+  frontMatter: { title, date, description },
+  mdxSource,
+  readingTime,
+}) => {
   return (
     <>
       <Head>
         <title>CFD - {title}</title>
+        <meta name="description" content={description}></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="px-6 pt-6 pb-10 mx-auto my-10 prose lg:prose-xl">
