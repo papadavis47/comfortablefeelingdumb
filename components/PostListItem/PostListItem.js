@@ -5,17 +5,19 @@ function PostListItem({ frontMatter, readingTime, slug }) {
     <div className="p-6 my-4 bg-white border-l-8 rounded-lg shadow-lg border-softBlue">
       <div className="flex flex-col ">
         <Link href={`/writing/${slug}`}>
-          <h1 className="pt-2 text-2xl font-bold capitalize cursor-pointer text-frenchAzraq hover:text-purpleMountain">
-            {frontMatter.title}
-          </h1>
+          <div className="group hover:cursor-pointer">
+            <h1 className="pt-2 text-2xl font-bold capitalize cursor-pointer text-frenchAzraq group-hover:text-purpleMountain ">
+              {frontMatter.title}
+            </h1>
+            <p className="pb-2 mt-3 text-lg italic font-semibold text-neutral-600 sm:text-xl">
+              {frontMatter.description}
+              <span> . . .</span>
+            </p>
+            <p className="mb-4 font-semibold text-md text-neutral-500">
+              {readingTime}
+            </p>
+          </div>
         </Link>
-        <p className="pb-2 mt-3 text-lg italic font-semibold text-neutral-600 sm:text-xl">
-          {frontMatter.description}
-          <span> . . .</span>
-        </p>
-        <p className="mb-4 font-semibold text-md text-neutral-500">
-          {readingTime}
-        </p>
         <div>
           {frontMatter.tags.map((tag, index) => (
             <Link href={`/subject/${tag}`} key={index}>
