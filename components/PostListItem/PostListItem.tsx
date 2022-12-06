@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 function PostListItem({ frontMatter, readingTime, slug }) {
   return (
-    <div className="p-6 my-4 bg-white border-l-8 rounded-lg shadow-lg border-softBlue">
+    <div className="p-6 my-4 bg-white rounded-lg shadow-lg">
       <div className="flex flex-col ">
         <Link href={`/writing/${slug}`}>
           <div className="group hover:cursor-pointer">
