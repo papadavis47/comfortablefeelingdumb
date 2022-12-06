@@ -1,3 +1,4 @@
+import { GetStaticProps, GetStaticPaths } from 'next'
 import PostList from '../../components/PostList'
 import { getAllPosts } from '../../utils/dataFetching.js'
 import { getFrontMatterOnly } from '../../utils/dataFetching.js'
@@ -6,9 +7,9 @@ import FilteredTitle from '../../components/FilteredTitle'
 const SubjectPage = ({ filteredPosts, subject }) => {
   return (
     <>
-      <div className="flex flex-col items-center py-2 mt-6">
+      <div className="mt-6 flex flex-col items-center py-2">
         <FilteredTitle subject={subject} />
-        <main className="flex flex-col items-center justify-start flex-1 w-full px-6 md:px-20">
+        <main className="flex w-full flex-1 flex-col items-center justify-start px-6 md:px-20">
           <PostList posts={filteredPosts} />
         </main>
       </div>
@@ -16,7 +17,7 @@ const SubjectPage = ({ filteredPosts, subject }) => {
   )
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getFrontMatterOnly().map((post) => post.frontMatter.tags)
   const paths = [...new Set(posts.flat())].map((tag) => {
     return {
@@ -30,7 +31,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const subject = params.tag
   const filteredPosts = getAllPosts().filter((post) =>
     post.frontMatter.tags.includes(subject)

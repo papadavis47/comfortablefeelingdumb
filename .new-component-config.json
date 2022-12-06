@@ -1,3 +1,4 @@
 {
-  "dir": "components"
+  "dir": "components",
+  "extension": "tsx"
 }

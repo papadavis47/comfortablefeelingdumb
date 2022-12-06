@@ -1,3 +1,4 @@
+import { GetStaticProps, GetStaticPaths } from 'next'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -7,7 +8,9 @@ import readingTime from 'reading-time'
 import Head from 'next/head'
 // import CoolHeading from '../components/CoolHeading'
 import Image from 'next/image'
-import Thanks from '../../components/Thanks/Thanks.js'
+import Thanks from '../../components/Thanks'
+
+// type Slug = string | string[]
 
 const components = { Image }
 const PostPage = ({
@@ -35,7 +38,7 @@ const PostPage = ({
   )
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync(path.join('posts'))
   const paths = files.map((filename) => {
     return {
@@ -51,7 +54,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params: { slug } }) => {
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const mdxWithMeta = fs.readFileSync(
     path.join('posts', slug, 'index.mdx'),
     'utf-8'

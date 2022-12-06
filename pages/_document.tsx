@@ -1,7 +1,16 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from 'next/document'
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
     const originalRenderPage = ctx.renderPage
     // The following lines before declaring initialProps were added per next docs
     // To prepare for React 18

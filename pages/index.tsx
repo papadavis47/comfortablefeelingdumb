@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next'
 import PostList from '../components/PostList'
 import LandingTitle from '../components/LandingTitle'
 import SubjectsList from '../components/SubjectsList'
@@ -15,8 +16,8 @@ const Home = ({ posts, subjects }) => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col items-center py-2 mt-6">
-        <main className="flex flex-col items-center justify-start flex-1 w-full px-6 md:px-20">
+      <div className="mt-6 flex flex-col items-center py-2">
+        <main className="flex w-full flex-1 flex-col items-center justify-start px-6 md:px-20">
           <LandingTitle />
           <PostList posts={posts} />
           <SubjectsList subjects={subjects} />
@@ -26,7 +27,7 @@ const Home = ({ posts, subjects }) => {
   )
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = getAllPosts()
 
   const allTags = posts.map((post) => post.frontMatter.tags)
