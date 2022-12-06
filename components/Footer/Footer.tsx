@@ -9,19 +9,36 @@ const Footer = () => {
           <a
             href="https://typescriptlang.org"
             className="hover:text-frenchAzraq"
+            target="_blank"
+            rel="noreferrer"
           >
             TypeScript
           </a>
           ,{' '}
-          <a href="https://nextjs.org" className="hover:text-frenchAzraq">
+          <a
+            href="https://nextjs.org"
+            className="hover:text-frenchAzraq"
+            target="_blank"
+            rel="noreferrer"
+          >
             Next.js
           </a>
           ,{' '}
-          <a href="https://tailwindcss.com" className="hover:text-frenchAzraq">
+          <a
+            href="https://tailwindcss.com"
+            className="hover:text-frenchAzraq"
+            target="_blank"
+            rel="noreferrer"
+          >
             TailwindCSS
           </a>{' '}
           and{' '}
-          <a href="https://mdxjs.com/" className="hover:text-frenchAzraq">
+          <a
+            href="https://mdxjs.com/"
+            className="hover:text-frenchAzraq"
+            target="_blank"
+            rel="noreferrer"
+          >
             MDX
           </a>
         </p>

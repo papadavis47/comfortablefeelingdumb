@@ -55,8 +55,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
+  // Doing some type checking below! Making sure slug is string : )
+  // Learning the TypeScript kung fu!
+  let goodSlug
+  if (typeof slug === 'string') {
+    goodSlug = slug
+  }
   const mdxWithMeta = fs.readFileSync(
-    path.join('posts', slug, 'index.mdx'),
+    path.join('posts', goodSlug, 'index.mdx'),
     'utf-8'
   )
 
