@@ -43,6 +43,19 @@ const Footer = () => {
           </a>
         </p>
       </div>
+      <p className="mx-8 text-sm ">
+        <a
+          href="https://www.johnwilliamdavis.com"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-frenchAzraq"
+        >
+          <span>
+            &copy; John William Davis &nbsp;
+            {new Date().getFullYear()}
+          </span>
+        </a>
+      </p>
     </footer>
   )
 }
