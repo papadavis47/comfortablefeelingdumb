@@ -21,12 +21,12 @@ const PostPage = ({
   return (
     <>
       <Head>
-        <title>CFD - {title}</title>
+        <title>{`CFD-${title}`}</title>
         <meta name="description" content={description}></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="px-6 pt-6 pb-10 mx-auto my-10 prose lg:prose-xl">
-        <h1 className="pb-2 font-extrabold text-transparent capitalize not-prose bg-gradient-to-l from-jacksonsPurple to-purpleMountain bg-clip-text lg:text-6xl">
+      <div className="prose mx-auto my-10 px-6 pb-10 pt-6 lg:prose-xl">
+        <h1 className="not-prose bg-gradient-to-l from-jacksonsPurple to-purpleMountain bg-clip-text pb-2 font-extrabold capitalize text-transparent lg:text-6xl">
           {title}
         </h1>
         <p>{date}</p>
