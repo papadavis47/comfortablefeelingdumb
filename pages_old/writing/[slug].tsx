@@ -8,7 +8,7 @@ import readingTime from 'reading-time'
 import Head from 'next/head'
 // import CoolHeading from '../components/CoolHeading'
 import Image from 'next/image'
-import Thanks from '../../components/Thanks'
+import Thanks from '../../components_old/Thanks'
 
 // type Slug = string | string[]
 

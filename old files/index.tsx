@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
-import PostList from '../components/PostList'
-import LandingTitle from '../components/LandingTitle'
-import SubjectsList from '../components/SubjectsList'
+import PostList from '../components_old/PostList'
+import LandingTitle from '../components_old/LandingTitle'
+import SubjectsList from '../components_old/SubjectsList'
 import Head from 'next/head'
 import { getAllPosts } from '../utils/dataFetching.js'
 

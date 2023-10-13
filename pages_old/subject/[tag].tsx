@@ -1,8 +1,8 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
-import PostList from '../../components/PostList'
+import PostList from '../../components_old/PostList'
 import { getAllPosts } from '../../utils/dataFetching.js'
 import { getFrontMatterOnly } from '../../utils/dataFetching.js'
-import FilteredTitle from '../../components/FilteredTitle'
+import FilteredTitle from '../../components_old/FilteredTitle'
 
 const SubjectPage = ({ filteredPosts, subject }) => {
   return (
