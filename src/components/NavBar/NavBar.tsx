@@ -16,6 +16,7 @@ function NavBar({}) {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
 
+  // TODO: Figure this function out later
   const handleScroll = debounce(() => {
     const currentScrollPos = window.scrollY
 
