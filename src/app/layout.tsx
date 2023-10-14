@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import type { AppProps } from 'next/app'
 import '../../styles/globals.css'
 import { Inter } from 'next/font/google'
+import Footer from '@/components/Footer'
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -15,15 +16,18 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="h-full">{children}</body>
+      <body className="h-full">
+        <div className="flex min-h-screen flex-col bg-stone-50">
+          <section className="flex-1">{children}</section>
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }
