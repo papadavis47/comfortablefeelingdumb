@@ -1,12 +1,18 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { VscTwitter, VscGithubInverted } from 'react-icons/vsc'
 import { ImHome } from 'react-icons/im'
 import { SiStackoverflow } from 'react-icons/si'
 import { CgDetailsMore } from 'react-icons/cg'
-import { debounce } from '../../utils/debounce.js'
+import { debounce } from '../../../utils/debounce.js'
 import Link from 'next/link'
 
-function NavBar({ toggleModal, isOpen }) {
+// TODO: Figure out the modal solution
+// Here are the props that this component used to take
+// toggleModal, isOpen
+
+function NavBar({}) {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
 
@@ -52,7 +58,7 @@ function NavBar({ toggleModal, isOpen }) {
             <VscTwitter size={30} />
           </a>
           <a
-            href="https://github.com/papadavis47"
+            href="https://github.com/papadavis47/comfortablefeelingdumb"
             target="_blank"
             className="hover:text-rose-900"
             rel="noreferrer"
@@ -69,8 +75,11 @@ function NavBar({ toggleModal, isOpen }) {
           </a>
         </div>
         {/* right */}
-        <div className={`${isOpen ? 'invisible' : null}`}>
-          <button className="hover:text-rose-900" onClick={toggleModal}>
+        {/* <div className={`${isOpen ? 'invisible' : null}`}> */}
+        <div>
+          {/* // TODO: Figure out modal toggle */}
+          {/* <button className="hover:text-rose-900" onClick={toggleModal}> */}
+          <button className="hover:text-rose-900">
             <CgDetailsMore size={30} />
           </button>
         </div>

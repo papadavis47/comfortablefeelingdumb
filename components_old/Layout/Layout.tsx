@@ -1,4 +1,4 @@
-import NavBar from '../NavBar'
+import NavBar from '../../src/components/NavBar'
 import Footer from '../../src/components/Footer'
 import Head from 'next/head'
 import { useState } from 'react'
