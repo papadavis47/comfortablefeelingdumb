@@ -5,7 +5,7 @@ import { VscTwitter, VscGithubInverted } from 'react-icons/vsc'
 import { ImHome } from 'react-icons/im'
 import { SiStackoverflow } from 'react-icons/si'
 import { CgDetailsMore } from 'react-icons/cg'
-import { debounce } from '../../../utils/debounce.js'
+import { debounce } from '@/utils/debounce'
 import Link from 'next/link'
 
 // TODO: Figure out the modal solution

@@ -3,7 +3,7 @@ import PostList from '../components_old/PostList'
 import LandingTitle from '../src/components/LandingTitle'
 import SubjectsList from '../components_old/SubjectsList'
 import Head from 'next/head'
-import { getAllPosts } from '../utils/dataFetching.js'
+import { getAllPosts } from '../src/utils/dataFetching.js'
 
 const Home = ({ posts, subjects }) => {
   return (
