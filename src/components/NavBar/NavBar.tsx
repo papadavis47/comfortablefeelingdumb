@@ -9,10 +9,6 @@ import { debounce } from '@/utils/debounce'
 import Link from 'next/link'
 import Modal from '../Modal'
 
-// TODO: Figure out the modal solution
-// Here are the props that this component used to take
-// toggleModal, isOpen
-
 function NavBar({}) {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
@@ -27,7 +23,6 @@ function NavBar({}) {
     setIsOpen(false)
   }
 
-  // TODO: Figure this function out later
   const handleScroll = debounce(() => {
     const currentScrollPos = window.scrollY
 
