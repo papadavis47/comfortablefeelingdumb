@@ -2,7 +2,7 @@ import NavBar from '../../src/components/NavBar'
 import Footer from '../../src/components/Footer'
 import Head from 'next/head'
 import { useState } from 'react'
-import Modal from '../Modal'
+import Modal from '../../src/components/Modal'
 
 function Layout({ children }) {
   let [isOpen, setIsOpen] = useState(false)
