@@ -6,8 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
-        serif: ['Inter', ...defaultTheme.fontFamily.serif],
+        sans: ['var(--font-geist-sans)'],
       },
       colors: {
         frenchAzraq: '#4a69bd',

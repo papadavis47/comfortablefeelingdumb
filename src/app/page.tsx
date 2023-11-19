@@ -1,9 +1,4 @@
-import { Metadata } from 'next'
 import LandingTitle from '@/components/LandingTitle'
-
-export const metadata: Metadata = {
-  title: 'Comfortable Feeling Dumb',
-}
 
 export default function Home() {
   return (
