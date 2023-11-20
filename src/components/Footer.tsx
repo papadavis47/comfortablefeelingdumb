@@ -1,8 +1,6 @@
-import Image from 'next/image'
-
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-center w-full py-4 font-semibold bg-slate-200 text-darkSapphire">
+    <footer className="flex w-full flex-col items-center justify-center bg-slate-200 py-4 font-semibold text-darkSapphire">
       <div className="px-6 py-4">
         <p className="mx-auto mt-2 md:text-lg">
           Built with{' '}

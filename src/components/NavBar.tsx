@@ -7,7 +7,7 @@ import { SiStackoverflow } from 'react-icons/si'
 import { CgDetailsMore } from 'react-icons/cg'
 import { debounce } from '@/utils/debounce'
 import Link from 'next/link'
-import Modal from '../Modal'
+import Modal from './Modal'
 
 function NavBar({}) {
   const [prevScrollPos, setPrevScrollPos] = useState(0)

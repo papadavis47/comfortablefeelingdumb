@@ -14,7 +14,7 @@
 //   }
 // }
 
-export function debounce(func, wait) {
+export function debounce(func: () => void, wait: number): () => void {
   let timeout
   return function () {
     let context = this,
