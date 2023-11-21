@@ -1,3 +1,4 @@
+import React from 'react'
 import fs from 'fs/promises'
 import path from 'path'
 import matter from 'gray-matter'
@@ -36,6 +37,16 @@ export async function getAllPosts() {
   return posts
 }
 
+export const loadBlogPost = React.cache(async function loadBlogPost(
+  slug: string
+) {
+  const rawContent = await readFile(`/posts/${slug}.mdx`)
+  const timeToRead = readingTime(rawContent).text
+
+  const { data: frontMatter, content } = matter(rawContent)
+
+  return { frontMatter, content, timeToRead }
+})
 //   const { data: frontMatter } = matter(mdxWithMeta)
 
 //     return {

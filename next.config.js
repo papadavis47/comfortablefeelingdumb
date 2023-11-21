@@ -13,11 +13,6 @@
 //   // Append the default value with md extensions
 //   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 // })
+const nextConfig = {}
 
-module.exports = {
-  experimental: {
-    outputFileTracingIncludes: {
-      '/*': ['./content/**/*'],
-    },
-  },
-}
+module.exports = nextConfig
