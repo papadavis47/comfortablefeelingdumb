@@ -1,9 +1,16 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Thanks from '@/components/Thanks'
 import { loadBlogPost } from '@/utils/file-helpers'
+import { BLOG_TITLE } from '@/utils/constants'
 import Image from 'next/image'
 
-// type Slug = string | string[]
+export async function generateMetadata({ params }) {
+  const { frontMatter } = await loadBlogPost(params.slug)
+  return {
+    title: `${frontMatter.title} | ${BLOG_TITLE}`,
+    description: frontMatter.description,
+  }
+}
 
 async function PostPage({ params }) {
   const { frontMatter, content, timeToRead } = await loadBlogPost(params.slug)

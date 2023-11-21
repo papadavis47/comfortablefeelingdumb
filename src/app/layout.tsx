@@ -3,10 +3,11 @@ import '@/styles/globals.css'
 import { GeistSans } from 'geist/font/sans'
 import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
+import { BLOG_TITLE } from '@/utils/constants'
 
 export const metadata: Metadata = {
-  title: 'CFD - Home',
-  description: 'A programming blog.',
+  title: BLOG_TITLE,
+  description: 'A blog about React, TypeScript ( and distance running )',
 }
 
 export default function RootLayout({

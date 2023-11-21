@@ -19,10 +19,10 @@ function PostListItem({ frontMatter, readingTime, slug }) {
           </div>
         </Link>
         <div>
-          {frontMatter.tags.map((tag, index) => (
-            <Link href={`/subject/${tag}`} key={index}>
+          {frontMatter.topics.map((topic, index) => (
+            <Link href={`/subject/${topic}`} key={index}>
               <span className="mr-2 mt-2 inline-flex cursor-pointer items-center rounded-md bg-frenchAzraq px-3 py-1 font-mono text-sm font-semibold lowercase text-white">
-                {tag}
+                {topic}
               </span>
             </Link>
           ))}

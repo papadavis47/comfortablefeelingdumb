@@ -1,12 +1,12 @@
 import PostListItem from '@/components/PostListItem'
 import { getAllPosts } from '@/utils/file-helpers'
 
-type Filter = string | null | undefined
+type Subject = string | null | undefined
 
-async function PostList({ filter }: { filter: Filter }) {
+async function PostList({ subject }: { subject?: Subject }) {
   let posts = await getAllPosts()
-  if (filter) {
-    posts = posts.filter((post) => post.frontMatter.tags.includes(filter))
+  if (subject) {
+    posts = posts.filter((post) => post.frontMatter.topics.includes(subject))
   }
   return (
     <div className="-ml-4 mb-6 mt-2 flex w-full flex-col pb-6 pt-4 sm:ml-0 sm:max-w-4xl sm:pt-8">

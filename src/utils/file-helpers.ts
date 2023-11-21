@@ -12,9 +12,17 @@ function readFile(localPath: string) {
   return fs.readFile(path.join(process.cwd(), localPath), 'utf8')
 }
 
+interface MyFrontmatter {
+  title: string
+  id: number
+  date: string
+  description: string
+  topics: string[]
+}
+
 type Post = {
   slug: string
-  frontMatter: { [key: string]: any }
+  frontMatter: MyFrontmatter
   readingTime: string
 }
 
@@ -28,7 +36,7 @@ export async function getAllPosts() {
     const { data: frontMatter } = matter(fileContent)
 
     posts.push({
-      frontMatter,
+      frontMatter: frontMatter as MyFrontmatter,
       slug: fileName.replace('.mdx', ''),
       readingTime: readingTime(fileContent).text,
     })
