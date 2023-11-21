@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@headlessui/react": "latest",
+    "bright": "^0.8.4",
     "clsx": "^2.0.0",
     "eslint-config-next": "latest",
     "geist": "^1.1.0",

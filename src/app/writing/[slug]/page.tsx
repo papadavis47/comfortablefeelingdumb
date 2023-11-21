@@ -2,7 +2,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import Thanks from '@/components/Thanks'
 import { loadBlogPost } from '@/utils/helpers'
 import { BLOG_TITLE } from '@/utils/constants'
-import Image from 'next/image'
+import COMPONENT_MAP from '@/utils/mdx-components'
 
 export async function generateMetadata({ params }) {
   const { frontMatter } = await loadBlogPost(params.slug)
@@ -21,7 +21,7 @@ async function PostPage({ params }) {
       </h1>
       <p>{frontMatter.date}</p>
       <p>{timeToRead}</p>
-      <MDXRemote source={content} components={{ Image }} />
+      <MDXRemote source={content} components={COMPONENT_MAP} />
       <Thanks />
     </div>
   )
