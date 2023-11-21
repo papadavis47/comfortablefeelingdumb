@@ -1,5 +1,5 @@
 import PostListItem from '@/components/PostListItem'
-import { getAllPosts } from '@/utils/file-helpers'
+import { getAllPosts } from '@/utils/helpers'
 
 type Subject = string | null | undefined
 

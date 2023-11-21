@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Thanks from '@/components/Thanks'
-import { loadBlogPost } from '@/utils/file-helpers'
+import { loadBlogPost } from '@/utils/helpers'
 import { BLOG_TITLE } from '@/utils/constants'
 import Image from 'next/image'
 

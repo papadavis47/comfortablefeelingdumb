@@ -85,7 +85,6 @@ function NavBar({}) {
           </div>
           {/* right */}
           <div className={`${isOpen ? 'invisible' : null}`}>
-            {/* // TODO: Figure out modal toggle */}
             <button className="hover:text-rose-900" onClick={toggleModal}>
               <CgDetailsMore size={30} />
             </button>
