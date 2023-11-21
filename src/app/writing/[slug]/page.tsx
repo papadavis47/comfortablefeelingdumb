@@ -27,46 +27,4 @@ async function PostPage({ params }) {
   )
 }
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const files = fs.readdirSync(path.join('posts'))
-//   const paths = files.map((filename) => {
-//     return {
-//       params: {
-//         slug: filename,
-//       },
-//     }
-//   })
-
-//   return {
-//     paths,
-//     fallback: false,
-//   }
-// }
-
-// export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
-//   // Doing some type checking below! Making sure slug is string : )
-//   // Learning the TypeScript kung fu!
-//   let goodSlug
-//   if (typeof slug === 'string') {
-//     goodSlug = slug
-//   }
-//   const mdxWithMeta = fs.readFileSync(
-//     path.join('posts', goodSlug, 'index.mdx'),
-//     'utf-8'
-//   )
-
-//   const { data: frontMatter, content } = matter(mdxWithMeta)
-
-//   const mdxSource = await serialize(content)
-
-//   return {
-//     props: {
-//       frontMatter,
-//       slug,
-//       mdxSource,
-//       readingTime: readingTime(content).text,
-//     },
-//   }
-// }
-
 export default PostPage

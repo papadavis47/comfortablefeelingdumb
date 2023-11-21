@@ -1,3 +1,7 @@
-const nextConfig = {}
-
-module.exports = nextConfig
+module.exports = {
+  experimental: {
+    outputFileTracingIncludes: {
+      '/*': ['./posts/**/*'],
+    },
+  },
+}
