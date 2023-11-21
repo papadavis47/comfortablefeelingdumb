@@ -20,6 +20,7 @@
     "reading-time": "^1.5.0"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^14.0.3",
     "@tailwindcss/typography": "latest",
     "@types/node": "^18.11.11",
     "@types/react": "^18.0.26",

@@ -15,7 +15,7 @@
   "overrides": [
     {
       "files": ["*.mdx"],
-      "extends": ["plugin:mdx/overrides"]
+      "extends": ["plugin:mdx/overrides", "eslint:recommended", "next"]
     }
   ]
 }
