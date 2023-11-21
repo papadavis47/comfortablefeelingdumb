@@ -14,8 +14,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "downlevelIteration": false
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "downlevelIteration": false,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
