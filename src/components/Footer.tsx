@@ -41,12 +41,12 @@ const Footer = () => {
           </a>
         </p>
       </div>
-      <p className="mx-8 text-sm ">
+      <p className="text-md mx-8 pb-4">
         <a
           href="https://www.johnwilliamdavis.com"
           target="_blank"
           rel="noreferrer"
-          className="hover:text-frenchAzraq"
+          className="inline-block hover:text-frenchAzraq"
         >
           <span>
             &copy; John William Davis &nbsp;
