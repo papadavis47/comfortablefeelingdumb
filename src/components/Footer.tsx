@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="flex w-full flex-col items-center justify-center bg-slate-200 py-4 font-semibold text-darkSapphire">
-      <div className="px-6 py-4">
-        <p className="mx-auto mt-2 md:text-lg">
+    <footer className="w-full bg-slate-200 py-4 font-semibold text-darkSapphire">
+      <div className="mx-auto px-6 py-4 md:max-w-4xl">
+        <p className="mt-2 md:text-lg">
           Built with{' '}
           <a
             href="https://typescriptlang.org"
@@ -40,20 +40,20 @@ const Footer = () => {
             MDX
           </a>
         </p>
+        <p className="text-md py-3 md:pb-4">
+          <a
+            href="https://www.johnwilliamdavis.com"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block hover:text-frenchAzraq"
+          >
+            <span>
+              &copy; John William Davis &nbsp;
+              {new Date().getFullYear()}
+            </span>
+          </a>
+        </p>
       </div>
-      <p className="text-md mx-8 pb-4">
-        <a
-          href="https://www.johnwilliamdavis.com"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-block hover:text-frenchAzraq"
-        >
-          <span>
-            &copy; John William Davis &nbsp;
-            {new Date().getFullYear()}
-          </span>
-        </a>
-      </p>
     </footer>
   )
 }
