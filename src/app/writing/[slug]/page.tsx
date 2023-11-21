@@ -16,7 +16,7 @@ async function PostPage({ params }) {
   const { frontMatter, content, timeToRead } = await loadBlogPost(params.slug)
   return (
     <div className="prose mx-auto my-10 px-6 pb-10 pt-6 lg:prose-xl">
-      <h1 className="not-prose bg-gradient-to-l from-jacksonsPurple to-purpleMountain bg-clip-text pb-2 font-extrabold capitalize text-transparent lg:text-6xl">
+      <h1 className="not-prose bg-gradient-to-l from-jacksonsPurple to-purpleMountain bg-clip-text pb-2 text-4xl font-extrabold capitalize text-transparent lg:text-6xl">
         {frontMatter.title}
       </h1>
       <p>{frontMatter.date}</p>
