@@ -1,42 +1,67 @@
-import fs from 'fs'
-import * as path from 'path'
+import fs from 'fs/promises'
+import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
 
-export const getAllPosts = () => {
-  const files = fs.readdirSync(path.join('posts'))
+function readDirectory(localPath: string) {
+  return fs.readdir(path.join(process.cwd(), localPath))
+}
 
-  const posts = files.map((filename) => {
-    const mdxWithMeta = fs.readFileSync(
-      path.join('posts', filename, 'index.mdx'),
-      'utf-8'
-    )
-    const { data: frontMatter } = matter(mdxWithMeta)
+function readFile(localPath: string) {
+  return fs.readFile(path.join(process.cwd(), localPath), 'utf8')
+}
 
-    return {
+type Post = {
+  slug: string
+  frontMatter: { [key: string]: any }
+  readingTime: string
+}
+
+export async function getAllPosts() {
+  const files = await readDirectory('/posts')
+
+  const posts: Post[] = []
+
+  for (let fileName of files) {
+    const fileContent = await readFile(`/posts/${fileName}`)
+    const { data: frontMatter } = matter(fileContent)
+
+    posts.push({
       frontMatter,
-      slug: filename,
-      readingTime: readingTime(mdxWithMeta).text,
-    }
-  })
+      slug: fileName.replace('.mdx', ''),
+      readingTime: readingTime(fileContent).text,
+    })
+  }
 
   return posts
 }
 
-export const getFrontMatterOnly = () => {
-  const files = fs.readdirSync(path.join('posts'))
+//   const { data: frontMatter } = matter(mdxWithMeta)
 
-  const posts = files.map((filename) => {
-    const mdxWithMeta = fs.readFileSync(
-      path.join('posts', filename, 'index.mdx'),
-      'utf-8'
-    )
-    const { data: frontMatter } = matter(mdxWithMeta)
+//     return {
+//       frontMatter,
+//       slug: filename,
+//       readingTime: readingTime(mdxWithMeta).text,
+//     }
+//   })
 
-    return {
-      frontMatter,
-    }
-  })
+//   return posts
+// }
 
-  return posts
-}
+// export const getFrontMatterOnly = () => {
+//   const files = fs.readdirSync(path.join('posts'))
+
+//   const posts = files.map((filename) => {
+//     const mdxWithMeta = fs.readFileSync(
+//       path.join('posts', filename, 'index.mdx'),
+//       'utf-8'
+//     )
+//     const { data: frontMatter } = matter(mdxWithMeta)
+
+//     return {
+//       frontMatter,
+//     }
+//   })
+
+//   return posts
+// }
