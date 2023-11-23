@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --original: 0 0% 100%;
+
+    --background: 60 9.1% 97.8%;
+
+    --subjects: 224 47% 52%;
+
+    --secondary: 250 24% 54%;
+
+    --headings: 240 31% 36%;
+
+    --shift: 341.5 75.5% 30.4%;
+
+    --darkness: 223 78% 21%;
+  }
+
+  .dark {
+    --background: 224 26% 25%;
+  }
+}

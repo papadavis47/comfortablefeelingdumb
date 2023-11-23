@@ -45,13 +45,13 @@ function NavBar({}) {
     <>
       {isOpen ? <Modal isOpen={isOpen} closeModal={closeModal} /> : null}
       <nav
-        className={`sticky z-50 bg-white ${
+        className={`sticky z-50 bg-original ${
           isVisible ? 'top-4' : '-top-20'
         } mx-auto mb-10 mt-4 w-full rounded-lg border-2 px-6 py-4 pt-4 shadow-lg backdrop-blur-md transition ease-linear sm:w-1/2`}
       >
-        <div className="flex justify-between text-darkSapphire sm:mx-auto sm:max-w-7xl">
+        <div className="flex justify-between text-darkness sm:mx-auto sm:max-w-7xl">
           {/* left */}
-          <div className="hover:text-rose-900">
+          <div className="hover:text-shift">
             <Link href="/">
               <ImHome size={30} />
             </Link>
@@ -62,14 +62,14 @@ function NavBar({}) {
               href="https://twitter.com/papadavis47"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-rose-900"
+              className="hover:text-shift"
             >
               <VscTwitter size={30} />
             </a>
             <a
               href="https://github.com/papadavis47/comfortablefeelingdumb"
               target="_blank"
-              className="hover:text-rose-900"
+              className="hover:text-shift"
               rel="noreferrer"
             >
               <VscGithubInverted size={30} />
@@ -78,14 +78,14 @@ function NavBar({}) {
               href="https://stackoverflow.com/users/9111781/jwdavis"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-rose-900"
+              className="hover:text-shift"
             >
               <SiStackoverflow size={30} />
             </a>
           </div>
           {/* right */}
           <div className={`${isOpen ? 'invisible' : null}`}>
-            <button className="hover:text-rose-900" onClick={toggleModal}>
+            <button className="hover:text-shift" onClick={toggleModal}>
               <CgDetailsMore size={30} />
             </button>
           </div>
