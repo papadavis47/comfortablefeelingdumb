@@ -4,9 +4,15 @@
 
 @layer base {
   :root {
-    --original: 0 0% 100%;
+    --colorOriginal: 0 0% 100%;
 
-    --background: 60 9.1% 97.8%;
+    --colorBackground: 60 9.1% 97.8%;
+
+    --colorStrongestText: 0 0% 25.1%;
+
+    --colorStrongText: 0 0% 32.2%;
+
+    --colorSubtleText: 0 0% 45.1%;
 
     --subjects: 224 47% 52%;
 
@@ -20,6 +26,9 @@
   }
 
   .dark {
-    --background: 224 26% 25%;
+    --colorOriginal: 10 12% 10%;
+    --colorBackground: 224 26% 25%;
+    --colorStrongText: 0 0% 92.2%;
+    --colorSubtleText: 0 0% 75.1%;
   }
 }

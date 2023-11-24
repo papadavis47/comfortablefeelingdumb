@@ -45,7 +45,7 @@ function NavBar({}) {
     <>
       {isOpen ? <Modal isOpen={isOpen} closeModal={closeModal} /> : null}
       <nav
-        className={`sticky z-50 bg-original ${
+        className={`sticky z-50 bg-colorOriginal ${
           isVisible ? 'top-4' : '-top-20'
         } mx-auto mb-10 mt-4 w-full rounded-lg border-2 px-6 py-4 pt-4 shadow-lg backdrop-blur-md transition ease-linear sm:w-1/2`}
       >

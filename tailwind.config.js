@@ -9,8 +9,11 @@ module.exports = {
         sans: ['var(--font-geist-sans)'],
       },
       colors: {
-        original: 'hsl(var(--original) / <alpha-value>)',
-        background: 'hsl(var(--background) / <alpha-value>)',
+        colorOriginal: 'hsl(var(--colorOriginal) / <alpha-value>)',
+        colorBackground: 'hsl(var(--colorBackground) / <alpha-value>)',
+        colorStrongText: 'hsl(var(--colorStrongText) / <alpha-value>)',
+        colorSubtleText: 'hsl(var(--colorSubtleText) / <alpha-value>)',
+        colorStrongestText: 'hsl(var(--colorStrongestText) / <alpha-value>)',
         secondary: 'hsl(var(--secondary) / <alpha-value>)',
         headings: 'hsl(var(--headings) / <alpha-value>)',
         subjects: 'hsl(var(--subjects) / <alpha-value>)',

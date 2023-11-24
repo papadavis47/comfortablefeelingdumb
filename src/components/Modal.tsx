@@ -31,7 +31,7 @@ function Modal({ closeModal, isOpen }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="bg-original h-auto max-w-5xl transform rounded-xl p-6 px-10 text-center align-middle shadow-xl transition-all">
+                <Dialog.Panel className="h-auto max-w-5xl transform rounded-xl bg-colorOriginal p-6 px-10 text-center align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
                     className="mt-6 text-2xl font-semibold leading-6 text-gray-900 md:text-3xl"
