@@ -6,7 +6,9 @@ export default function NotFound() {
     <div className="px-6 md:px-20">
       <section className="mx-auto mt-8 w-full sm:max-w-4xl">
         <CoolLetters>404 - extinct 🦖</CoolLetters>
-        <h2 className="py-4 text-4xl text-secondary">Or does not exist.</h2>
+        <h2 className="py-4 text-4xl text-secondary">
+          Or this URL never existed
+        </h2>
         <p className="py-6 text-3xl text-secondary">
           Either way, no content here . . .{' '}
         </p>
