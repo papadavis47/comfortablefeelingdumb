@@ -20,8 +20,8 @@ async function PostPage({ params }: { params: { slug: string } }) {
       <h1 className="not-prose bg-gradient-to-l from-headings to-secondary bg-clip-text pb-2 text-4xl font-extrabold capitalize text-transparent lg:text-7xl">
         {frontMatter.title}
       </h1>
-      <p>{frontMatter.date}</p>
-      <p>{timeToRead}</p>
+      <span className="my-6 block py-4 text-xl">{frontMatter.date}</span>
+      <span className="my-2 block py-4 text-xl">{timeToRead}</span>
       <MDXRemote source={content} components={COMPONENT_MAP} />
       <Thanks />
     </div>
