@@ -1,19 +1,32 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import { notFound } from 'next/navigation'
 import Thanks from '@/components/Thanks'
-import { loadBlogPost } from '@/utils/helpers'
+import { getSlugsOnly, loadBlogPost } from '@/utils/helpers'
 import { BLOG_TITLE } from '@/utils/constants'
 import COMPONENT_MAP from '@/utils/mdx-components'
 
 export async function generateMetadata({ params }) {
-  const { frontMatter } = await loadBlogPost(params.slug)
-  return {
-    title: `${frontMatter.title} | ${BLOG_TITLE}`,
-    description: frontMatter.description,
+  const slugs: string[] = await getSlugsOnly()
+  if (slugs.includes(params.slug) === false) {
+    notFound()
+  } else {
+    const { frontMatter } = await loadBlogPost(params.slug)
+    return {
+      title: `${frontMatter.title} | ${BLOG_TITLE}`,
+      description: frontMatter.description,
+    }
   }
 }
 
-async function PostPage({ params }) {
+async function PostPage({ params }: { params: { slug: string } }) {
+  // console.log(slugs)
+  // console.log(params.slug)
+  // console.log(slugs.includes(params.slug))
   const { frontMatter, content, timeToRead } = await loadBlogPost(params.slug)
+  if (!content) {
+    notFound()
+  }
+
   return (
     <div className="prose prose-slate mx-auto my-10 px-6 pb-10 pt-6 lg:prose-xl prose-headings:text-3xl prose-p:text-colorStrongestText lg:prose-p:text-2xl">
       <h1 className="not-prose bg-gradient-to-l from-headings to-secondary bg-clip-text pb-2 text-4xl font-extrabold capitalize text-transparent lg:text-7xl">

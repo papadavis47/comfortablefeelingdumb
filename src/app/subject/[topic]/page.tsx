@@ -1,7 +1,13 @@
 import PostList from '@/components/PostList'
+import { notFound } from 'next/navigation'
 import FilteredTitle from '@/components/FilteredTitle'
+import { getSubjectsOnly } from '@/utils/helpers'
 
-const SubjectPage = ({ params }: { params: { topic: string } }) => {
+const SubjectPage = async ({ params }: { params: { topic: string } }) => {
+  const subjects = await getSubjectsOnly()
+  if (!subjects.includes(params.topic)) {
+    notFound()
+  }
   const subject = params.topic
   return (
     <div className="mt-6 flex flex-col items-center py-2">

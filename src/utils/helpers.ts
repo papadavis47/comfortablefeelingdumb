@@ -26,6 +26,23 @@ type Post = {
   readingTime: string
 }
 
+export async function getSlugsOnly() {
+  const files = await readDirectory('/posts')
+
+  const slugs = files.map((file) => file.replace('.mdx', ''))
+
+  return slugs
+}
+
+export async function getSubjectsOnly() {
+  const posts = await getAllPosts()
+  const subjects = [
+    ...new Set(posts.map((post) => post.frontMatter.topics).flat()),
+  ]
+
+  return subjects
+}
+
 export async function getAllPosts() {
   const files = await readDirectory('/posts')
 
