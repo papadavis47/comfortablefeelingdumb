@@ -3,6 +3,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
+import { notFound } from 'next/navigation'
 
 function readDirectory(localPath: string) {
   return fs.readdir(path.join(process.cwd(), localPath))
@@ -65,6 +66,10 @@ export async function getAllPosts() {
 export const loadBlogPost = React.cache(async function loadBlogPost(
   slug: string
 ) {
+  const slugs = await getSlugsOnly()
+  if (!slugs.includes(slug)) {
+    notFound()
+  }
   const rawContent = await readFile(`/posts/${slug}.mdx`)
   const timeToRead = readingTime(rawContent).text
 
