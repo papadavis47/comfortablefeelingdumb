@@ -4,8 +4,8 @@ import SubjectsList from '@/components/SubjectsList'
 
 export default function Home() {
   return (
-    <div className="mt-6 flex flex-col items-center py-2">
-      <main className="flex w-full flex-1 flex-col items-center justify-start px-6 md:px-20">
+    <div className="flex flex-col items-center py-2 mt-6">
+      <main className="flex flex-col items-center justify-start flex-1 w-full px-6 md:px-20">
         <LandingTitle />
         <PostList />
         <SubjectsList />

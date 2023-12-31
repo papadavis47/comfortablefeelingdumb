@@ -4,6 +4,7 @@ const COLORS = {
     colorBackground: 'hsl(60 9.1% 97.8%)',
     colorStrongText: 'hsl(0 0% 32.2%)',
     colorSubtleText: 'hsl(0 0% 45.1%)',
+    colorStrongestText: 'hsl(0 0% 25.1%)',
   },
 
   dark: {
@@ -11,6 +12,7 @@ const COLORS = {
     colorBackground: 'hsl(224, 26%, 25%)',
     colorStrongText: 'hsl(0 0% 92.2%)',
     colorSubtleText: 'hsl(0 0% 75.1%)',
+    colorStrongestText: 'hsl(0 0% 100%)',
   },
   goodPurple: 'hsl(240, 31%, 36%)',
   green: 'hsl(140, 81%, 56%)',

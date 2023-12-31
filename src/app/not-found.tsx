@@ -4,7 +4,7 @@ import CoolLetters from '@/components/CoolLetters'
 export default function NotFound() {
   return (
     <div className="px-6 md:px-20">
-      <section className="mx-auto mt-8 w-full sm:max-w-4xl">
+      <section className="w-full mx-auto mt-8 sm:max-w-4xl">
         <CoolLetters>404 - extinct 🦖</CoolLetters>
         <h2 className="py-4 text-4xl text-secondary">
           Or this URL never existed

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="w-full bg-slate-200 py-4 font-semibold text-darkness">
-      <div className="mx-auto px-6 py-4 md:max-w-4xl">
+    <footer className="w-full py-4 font-semibold bg-slate-200 text-darkness">
+      <div className="px-6 py-4 mx-auto md:max-w-4xl">
         <p className="mt-2 md:text-lg">
           Built with{' '}
           <a
@@ -40,7 +40,7 @@ const Footer = () => {
             MDX
           </a>
         </p>
-        <p className="text-md py-3 md:pb-4">
+        <p className="py-3 text-md md:pb-4">
           <a
             href="https://www.johnwilliamdavis.com"
             target="_blank"
