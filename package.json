@@ -18,7 +18,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.4.0",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.3",

@@ -5,23 +5,14 @@
 @layer base {
   :root {
     --colorOriginal: 0 0% 100%;
-
     --colorBackground: 60 9.1% 97.8%;
-
     --colorStrongestText: 0 0% 25.1%;
-
     --colorStrongText: 0 0% 32.2%;
-
     --colorSubtleText: 0 0% 45.1%;
-
     --subjects: 224 47% 52%;
-
     --secondary: 250 24% 54%;
-
     --headings: 240 31% 36%;
-
     --shift: 341.5 75.5% 30.4%;
-
     --darkness: 223 78% 21%;
   }
 
