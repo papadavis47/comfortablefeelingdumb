@@ -48,10 +48,8 @@ function Modal({ closeModal, isOpen }) {
                       found that this discomfort is temporary. The struggle
                       happens often and continues until the most challenging
                       parts of a run have passed or until the problem in the
-                      code is solved. As a dev in a rapidly changing profession,
-                      I find that the best way to handle the discomfort is to
-                      simply get comfortable with the feeling and live there
-                      daily.
+                      code is solved. The challenge and the friction is how the
+                      adaptations and learning happen.
                     </p>
                   </div>
 
