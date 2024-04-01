@@ -50,8 +50,8 @@ function Modal({ closeModal, isOpen }) {
                       parts of a run have passed or until the problem in the
                       code is solved. As a dev in a rapidly changing profession,
                       I find that the best way to handle the discomfort is to
-                      simply get comfortable with the feeling. It part of the
-                      process and a familiar part of my daily life.
+                      simply get comfortable with the feeling and live there
+                      daily.
                     </p>
                   </div>
 
