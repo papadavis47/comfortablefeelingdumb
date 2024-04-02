@@ -49,7 +49,7 @@ function Modal({ closeModal, isOpen }) {
                       happens often and continues until the most challenging
                       parts of a run have passed or until the problem in the
                       code is solved. The challenge and the friction is how the
-                      adaptations and learning happen.
+                      adaptations and the learning happen.
                     </p>
                   </div>
 
