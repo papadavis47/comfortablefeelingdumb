@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@headlessui/react": "latest",
+    "@tailwindcss/postcss": "next",
     "bright": "^0.8.4",
     "clsx": "^2.0.0",
     "eslint-config-next": "latest",
@@ -23,15 +24,13 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.3",
-    "@tailwindcss/typography": "latest",
     "@types/node": "^18.11.11",
     "@types/react": "^18.0.26",
     "autoprefixer": "^10.4.0",
     "eslint-plugin-mdx": "^2.2.0",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
-    "prettier-plugin-tailwindcss": "^0.1.1",
-    "tailwindcss": "^3.0.7",
+    "tailwindcss": "next",
     "typescript": "5.2"
   }
 }
