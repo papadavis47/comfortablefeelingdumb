@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 function Thanks() {
   return (
-    <div className='text-2xl py-3'>
-      <p className='font-semibold'>Thanks for reading!</p>
+    <div className='text-xl py-3'>
+      <p className='font-semibold my-4'>Thanks for reading!</p>
       <Link href='/'>
         <p className='flex max-w-fit cursor-pointer items-center'>
           <svg
