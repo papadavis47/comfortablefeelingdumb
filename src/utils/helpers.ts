@@ -37,7 +37,8 @@ export async function getSlugsOnly() {
 }
 
 export async function getSubjectsOnly() {
-  const posts = await getAllPosts();
+  const rawPosts = await getAllPosts();
+  const posts = rawPosts.filter((post) => !post.frontMatter.isDraft);
   const subjects = [...new Set(posts.map((post) => post.frontMatter.topics).flat())];
 
   return subjects;

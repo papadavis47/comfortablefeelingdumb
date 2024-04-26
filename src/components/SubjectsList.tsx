@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { getAllPosts } from '@/utils/helpers';
 
 async function SubjectsList() {
-  const posts = await getAllPosts();
+  const rawPosts = await getAllPosts();
+  const posts = rawPosts.filter((post) => !post.frontMatter.isDraft);
   const subjects = [...new Set(posts.map((post) => post.frontMatter.topics).flat())];
   return (
     <div className='mb-6 flex w-full flex-wrap pb-12 sm:max-w-4xl'>
