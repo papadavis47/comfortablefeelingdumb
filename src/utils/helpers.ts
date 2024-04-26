@@ -59,6 +59,9 @@ export async function getAllPosts() {
     });
   }
 
+  /* This is where I sort them post in **descending order**. It is simple manual id system since I do not have that many posts and I can order the posts any way I want this way */
+  posts.sort((a, b) => b.frontMatter.id - a.frontMatter.id);
+
   return posts;
 }
 
