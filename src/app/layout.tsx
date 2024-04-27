@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en' className={`${GeistSans.variable}`}>
       <body className='h-full'>
-        <div className='flex flex-col min-h-screen bg-background'>
+        <div className='flex flex-col min-h-screen bg-background px-[6px] md:px-0'>
           <NavBar />
           <section className='flex-1'>{children}</section>
           <Footer />

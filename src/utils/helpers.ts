@@ -37,8 +37,7 @@ export async function getSlugsOnly() {
 }
 
 export async function getSubjectsOnly() {
-  const rawPosts = await getAllPosts();
-  const posts = rawPosts.filter((post) => !post.frontMatter.isDraft);
+  const posts = await getAllPosts();
   const subjects = [...new Set(posts.map((post) => post.frontMatter.topics).flat())];
 
   return subjects;
@@ -47,18 +46,23 @@ export async function getSubjectsOnly() {
 export async function getAllPosts() {
   const files = await readDirectory('/posts');
 
-  const posts: Post[] = [];
+  const rawPosts: Post[] = [];
 
   for (let fileName of files) {
     const fileContent = await readFile(`/posts/${fileName}`);
     const { data: frontMatter } = matter(fileContent);
 
-    posts.push({
+    rawPosts.push({
       frontMatter: frontMatter as MyFrontmatter,
       slug: fileName.replace('.mdx', ''),
       readingTime: readingTime(fileContent).text,
     });
   }
+
+  // This is where I am filtering out the drafts here
+  // Before, I was doing it further down the line in multiple places
+
+  const posts = rawPosts.filter((post) => !post.frontMatter.isDraft);
 
   /* This is where I sort them post in **descending order**. It is simple manual id system since I do not have that many posts and I can order the posts any way I want this way */
   posts.sort((a, b) => b.frontMatter.id - a.frontMatter.id);

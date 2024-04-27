@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { VscTwitter, VscGithubInverted } from 'react-icons/vsc';
+import { FaSquareXTwitter } from 'react-icons/fa6';
+import { BsTwitterX } from 'react-icons/bs';
 import { ImHome } from 'react-icons/im';
 import { SiStackoverflow } from 'react-icons/si';
 import { CgDetailsMore } from 'react-icons/cg';
@@ -58,12 +60,12 @@ function NavBar({}) {
           {/* middle */}
           <div className='flex items-center space-x-5'>
             <a
-              href='https://twitter.com/papadavis47'
+              href='https://x.com/papadavis47'
               target='_blank'
               rel='noreferrer'
               className='hover:text-shift'
             >
-              <VscTwitter size={30} />
+              <BsTwitterX size={30} />
             </a>
             <a
               href='https://github.com/papadavis47/comfortablefeelingdumb'

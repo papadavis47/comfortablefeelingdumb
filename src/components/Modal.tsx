@@ -46,7 +46,7 @@ function Modal({ closeModal, isOpen }) {
                       my experiences in distance running, I have found that this discomfort is
                       temporary. The struggle happens often and continues until the most challenging
                       parts of a run have passed or until the problem in the code is solved. The
-                      challenge and the friction are how the adaptations and the learning happen.
+                      challenges and the friction are how the adaptations and the learning happen.
                     </p>
                   </div>
 
