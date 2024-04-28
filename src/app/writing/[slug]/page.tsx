@@ -1,4 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import CoolLetters from '@/components/CoolLetters';
 import { type MyFrontmatter } from '@/utils/helpers';
 import Thanks from '@/components/Thanks';
 import { loadBlogPost } from '@/utils/helpers';
@@ -21,9 +22,7 @@ async function PostPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className='px-6 pt-6 pb-10 mx-auto my-10 max-w-[900px]'>
-      <h1 className='pb-2 text-4xl font-extrabold text-transparent capitalize bg-gradient-to-l from-headings to-secondary bg-clip-text lg:text-7xl'>
-        {frontMatter.title}
-      </h1>
+      <CoolLetters>{frontMatter.title}</CoolLetters>
       <span className='block py-4 my-6 text-xl'>{frontMatter.date}</span>
       <span className='block py-4 my-2 text-xl'>{timeToRead}</span>
       <MDXRemote source={content} components={COMPONENT_MAP} />

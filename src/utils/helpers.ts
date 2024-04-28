@@ -1,7 +1,7 @@
 import React from 'react';
 import fs from 'fs/promises';
 import path from 'path';
-import matter from 'gray-matter';
+import matter, { GrayMatterFile } from 'gray-matter';
 import readingTime from 'reading-time';
 import { notFound } from 'next/navigation';
 

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import CodeSnippet from '@/components/CodeSnippet';
 import WritingParagraph from '@/components/writing/WritingParagraph';
 import WritingSubHeading from '@/components/writing/WritingSubHeading';
 import WritingAnchorTag from '@/components/writing/WritingAnchorTag';
@@ -10,6 +11,7 @@ const COMPONENT_MAP = {
   p: WritingParagraph,
   a: WritingAnchorTag,
   ol: WritingOrderedList,
+  pre: CodeSnippet,
 };
 
 export default COMPONENT_MAP;
