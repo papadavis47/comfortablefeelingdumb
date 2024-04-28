@@ -1,7 +1,12 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-function Modal({ closeModal, isOpen }) {
+type ModalProps = {
+  closeModal: () => void;
+  isOpen: boolean;
+};
+
+function Modal({ closeModal, isOpen }: ModalProps) {
   return (
     <>
       <div className='fixed inset-0 flex items-center justify-center'></div>

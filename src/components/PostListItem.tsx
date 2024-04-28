@@ -1,5 +1,9 @@
 import Link from 'next/link';
 
+type Props = {
+  frontMatter: MyFrontMatter;
+};
+
 function PostListItem({ frontMatter, readingTime, slug }) {
   return (
     <div className='my-4 rounded-lg bg-original p-6 shadow-lg'>
