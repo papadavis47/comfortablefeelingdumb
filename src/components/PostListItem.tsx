@@ -1,10 +1,13 @@
 import Link from 'next/link';
+import { type MyFrontmatter } from '@/utils/helpers';
 
-type Props = {
-  frontMatter: MyFrontMatter;
+type ListItemProps = {
+  frontMatter: MyFrontmatter;
+  readingTime: string;
+  slug: string;
 };
 
-function PostListItem({ frontMatter, readingTime, slug }) {
+function PostListItem({ frontMatter, readingTime, slug }: ListItemProps) {
   return (
     <div className='my-4 rounded-lg bg-original p-6 shadow-lg'>
       <div className='flex flex-col '>

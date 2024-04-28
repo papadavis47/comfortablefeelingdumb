@@ -1,36 +1,22 @@
-import PostList from '@/components/PostList'
-import { notFound } from 'next/navigation'
-import FilteredTitle from '@/components/FilteredTitle'
-import { getSubjectsOnly } from '@/utils/helpers'
+import PostList from '@/components/PostList';
+import { notFound } from 'next/navigation';
+import FilteredTitle from '@/components/FilteredTitle';
+import { getSubjectsOnly } from '@/utils/helpers';
 
 const SubjectPage = async ({ params }: { params: { topic: string } }) => {
-  const subjects = await getSubjectsOnly()
+  const subjects = await getSubjectsOnly();
   if (!subjects.includes(params.topic)) {
-    notFound()
+    notFound();
   }
-  const subject = params.topic
+  const subject = params.topic;
   return (
-    <div className="mt-6 flex flex-col items-center py-2">
+    <div className='mt-6 flex flex-col items-center py-2'>
       <FilteredTitle subject={subject} />
-      <main className="flex w-full flex-1 flex-col items-center justify-start px-6 md:px-20">
+      <main className='flex w-full flex-1 flex-col items-center justify-start px-6 md:px-20'>
         <PostList subject={subject} />
       </main>
     </div>
-  )
-}
+  );
+};
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const posts = getFrontMatterOnly().map((post) => post.frontMatter.tags)
-//   const paths = [...new Set(posts.flat())].map((tag) => {
-//     return {
-//       params: { tag },
-//     }
-//   })
-
-//   return {
-//     paths,
-//     fallback: false,
-//   }
-// }
-
-export default SubjectPage
+export default SubjectPage;

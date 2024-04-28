@@ -1,11 +1,15 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { type MyFrontmatter } from '@/utils/helpers';
 import Thanks from '@/components/Thanks';
 import { loadBlogPost } from '@/utils/helpers';
 import { BLOG_TITLE } from '@/utils/constants';
 import COMPONENT_MAP from '@/utils/mdx-components';
 
-export async function generateMetadata({ params }) {
-  const { frontMatter } = await loadBlogPost(params.slug);
+// Not sure if I am doing this typescript stuff here right - but I will check later
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { frontMatter }: { frontMatter: { [key: string]: MyFrontmatter } } = await loadBlogPost(
+    params.slug
+  );
   return {
     title: `${frontMatter.title} | ${BLOG_TITLE}`,
     description: frontMatter.description,
