@@ -49,8 +49,8 @@ function Modal({ closeModal, isOpen }: ModalProps) {
                       comfortable to me as a software engineer. I try to be at
                       peace with the daily feelings of being at the edge of my
                       knowledge - where comfort ends and struggle begins.
-                      Similar to my experiences in distance running, I have
-                      found that this discomfort is temporary. The struggle
+                      Similar to my experiences in trail and distance running, I
+                      have found that this discomfort is temporary. The struggle
                       happens often and continues until the most challenging
                       parts of a run have passed or until the problem in the
                       code is solved. The challenges and the friction are how

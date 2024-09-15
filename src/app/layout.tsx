@@ -7,7 +7,7 @@ import { BLOG_TITLE } from '@/utils/constants'
 
 export const metadata: Metadata = {
   title: BLOG_TITLE,
-  description: 'A blog about React, TypeScript ( and distance running )',
+  description: 'A blog about TypeScript, Go, Rust ( and trail running )',
 }
 
 export default function RootLayout({
