@@ -1,4 +1,4 @@
-module.exports = {
+const nextConfig = {
   experimental: {
     outputFileTracingIncludes: {
       '/*': ['./posts/**/*'],
@@ -8,4 +8,6 @@ module.exports = {
   // Found the info here:
   //https://github.com/vercel/next.js/issues/63318
   transpilePackages: ['next-mdx-remote'],
-};
+}
+
+export default nextConfig
