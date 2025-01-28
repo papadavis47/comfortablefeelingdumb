@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@headlessui/react": "latest",
-    "@tailwindcss/postcss": "4.0.0-beta.2",
+    "@tailwindcss/postcss": "4.0.0",
     "bright": "^0.8.5",
     "clsx": "^2.1.1",
     "eslint-config-next": "14.2.16",
@@ -28,7 +28,7 @@
     "@types/react": "18.3.12",
     "autoprefixer": "^10.4.20",
     "eslint-plugin-mdx": "^3.1.5",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.1",
     "prettier": "^2.8.8",
     "tailwindcss": "4.0.0",
     "typescript": "~5.2.2"
