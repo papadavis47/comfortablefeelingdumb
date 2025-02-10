@@ -1,8 +1,6 @@
 const nextConfig = {
-  experimental: {
-    outputFileTracingIncludes: {
-      '/*': ['./posts/**/*'],
-    },
+  outputFileTracingIncludes: {
+    '/*': ['./posts/**/*'],
   },
   // Had to put in this line after an error from upgrading
   // Found the info here:

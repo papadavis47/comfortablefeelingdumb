@@ -12,7 +12,9 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-  const { frontMatter }: { frontMatter: { [key: string]: MyFrontmatter } } =
+  const {
+    frontMatter,
+  }: { frontMatter: { [key: string]: MyFrontmatter['description'] } } =
     await loadBlogPost(params.slug)
   return {
     title: `${frontMatter.title} | ${BLOG_TITLE}`,
