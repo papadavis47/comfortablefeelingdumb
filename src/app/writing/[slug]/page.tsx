@@ -7,11 +7,12 @@ import { BLOG_TITLE } from '@/utils/constants'
 import COMPONENT_MAP from '@/utils/mdx-components'
 
 // Not sure if I am doing this typescript stuff here right - but I will check later
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>
+  }
+) {
+  const params = await props.params;
   const {
     frontMatter,
   }: { frontMatter: { [key: string]: MyFrontmatter['description'] } } =
@@ -22,7 +23,8 @@ export async function generateMetadata({
   }
 }
 
-async function PostPage({ params }: { params: { slug: string } }) {
+async function PostPage(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const { frontMatter, content, timeToRead } = await loadBlogPost(params.slug)
 
   return (

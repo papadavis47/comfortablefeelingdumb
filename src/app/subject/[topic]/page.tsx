@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation'
 import FilteredTitle from '@/components/FilteredTitle'
 import { getSubjectsOnly } from '@/utils/helpers'
 
-const SubjectPage = async ({ params }: { params: { topic: string } }) => {
+const SubjectPage = async (props: { params: Promise<{ topic: string }> }) => {
+  const params = await props.params;
   const subjects = await getSubjectsOnly()
   if (!subjects.includes(params.topic)) {
     notFound()
