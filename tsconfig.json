@@ -4,7 +4,37 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    
+    // STRICT MODE ENABLED: This is the most important change for type safety
+    // "strict": true enables ALL strict type checks at once, including:
+    // - noImplicitAny: Prevents using 'any' type implicitly
+    // - noImplicitReturns: Ensures all code paths return a value
+    // - noImplicitThis: Prevents using 'this' without proper typing
+    // - strictNullChecks: Makes null and undefined distinct types
+    // - strictBindCallApply: Enables stricter checking of bind/call/apply
+    // - strictFunctionTypes: Enables stricter function type checking
+    // - strictPropertyInitialization: Ensures class properties are initialized
+    "strict": true,
+    
+    // ADDITIONAL STRICT CHECKS: These provide even more safety
+    // Catches functions that don't return values on all code paths
+    "noImplicitReturns": true,
+    
+    // Prevents variables from being used before declaration
+    "noImplicitUseStrict": false,
+    
+    // Reports errors on unused local variables (helps catch typos and dead code)
+    "noUnusedLocals": true,
+    
+    // Reports errors on unused function parameters
+    "noUnusedParameters": true,
+    
+    // Catches unreachable code after return statements, throws, etc.
+    "allowUnreachableCode": false,
+    
+    // Reports errors when not all switch cases are handled
+    "noFallthroughCasesInSwitch": true,
+    
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
@@ -14,6 +44,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "jsxImportSource": "react",
     "paths": {
       "@/*": ["./src/*"]
     },
@@ -22,8 +53,8 @@
       {
         "name": "next"
       }
-    ],
-    "strictNullChecks": true
+    ]
+    // Note: Removed duplicate "strictNullChecks": true since it's included in "strict": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

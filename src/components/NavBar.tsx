@@ -1,8 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { VscTwitter, VscGithubInverted } from 'react-icons/vsc'
-import { FaSquareXTwitter } from 'react-icons/fa6'
+import { VscGithubInverted } from 'react-icons/vsc'
 import { SiBluesky } from 'react-icons/si'
 import { ImHome } from 'react-icons/im'
 import { SiStackoverflow } from 'react-icons/si'
@@ -11,7 +10,11 @@ import { debounce } from '@/utils/debounce'
 import Link from 'next/link'
 import Modal from '@/components/Modal'
 
-function NavBar({}) {
+// REMOVED UNUSED IMPORTS: VscTwitter and FaSquareXTwitter were not being used
+// The strict mode caught these unused imports
+
+// PROPER COMPONENT TYPING: No props needed, but explicit return type helps
+function NavBar(): React.JSX.Element {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
 
