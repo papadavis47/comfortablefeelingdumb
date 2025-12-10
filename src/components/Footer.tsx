@@ -19,7 +19,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Next.js 15
+            Next.js 16
           </a>
           ,{' '}
           <a

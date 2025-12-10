@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A Next.js 15 blog built with TypeScript, Tailwind CSS v4, and MDX for content. The blog focuses on programming content around TypeScript, Go, and Rust. Uses strict TypeScript configuration with comprehensive type safety and modern ESLint v9 flat config.
+A Next.js 16 blog built with TypeScript, Tailwind CSS v4, and MDX for content. The blog focuses on programming content around TypeScript, Go, and Rust. Uses strict TypeScript configuration with comprehensive type safety and modern ESLint v9 flat config.
 
 ## Development Commands
 
@@ -42,6 +42,7 @@ pnpm pre-commit         # Comprehensive check with auto-fix for commits
 - **Type Guards Over Assertions**: Use `isValidFrontmatter(obj): obj is MyFrontmatter` pattern
 - **Explicit Return Types**: All functions have explicit return types for better documentation
 - **React 19 Compatibility**: Uses `React.JSX.Element` return types
+- **JSX Transform**: Uses `"jsx": "react-jsx"` (React automatic runtime, set by Next.js 16)
 
 ### MDX Component Architecture
 - **Component Mapping**: `COMPONENT_MAP` in `/src/utils/mdx-components.ts` maps HTML elements to custom components
@@ -67,15 +68,16 @@ export type MyFrontmatter = {
 ```
 
 ### Styling Approach
-- **Tailwind CSS v4**: Latest version with custom color variables
+- **Tailwind CSS v4**: Version 4.1.17 with custom color variables
 - **Responsive Design**: Mobile-first approach with `sm:`, `md:`, `lg:` breakpoints
 - **Custom Components**: Writing components have consistent styling for typography
 - **Theme**: Uses custom CSS variables for colors defined in main.css
 
 ### Next.js Configuration Notes
+- **Version**: Next.js 16.0.8 (includes CVE-2025-66478 security patch)
 - **MDX Integration**: Requires `transpilePackages: ['next-mdx-remote']` for proper compilation
 - **File Tracing**: Includes `/posts/**/*` for deployment optimization
-- **App Router**: Uses Next.js 13+ App Router architecture
+- **App Router**: Uses Next.js App Router architecture with React Server Components
 
 ### Error Handling Philosophy
 - **Graceful Degradation**: Invalid frontmatter logs errors but continues processing other posts
@@ -84,6 +86,9 @@ export type MyFrontmatter = {
 
 ### Development Notes
 - **Package Manager**: Uses `pnpm` (not npm/yarn)
-- **ESLint**: Modern v9 flat configuration with TypeScript rules
-- **Node Types**: Uses latest @types/node (v24+) and @types/react (v19+)
-- **Import Strategy**: Prefers `import type` for type-only imports
+- **Versions**: Next.js 16.0.8, React 19.2.1, TypeScript 5.9.3
+- **ESLint**: v9.39.1 with native Next.js 16 flat config support (no FlatCompat needed)
+- **ESLint Config**: Uses `eslint-config-next/core-web-vitals` directly in flat config format
+- **TypeScript-ESLint**: Works alongside ESLint - parser understands TypeScript, plugin provides TypeScript-specific rules
+- **Node Types**: Uses @types/node v24.10.2 and @types/react v19.2.7
+- **Import Strategy**: Prefers `import type` for type-only imports (enforced by ESLint rule)

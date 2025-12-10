@@ -1,32 +1,25 @@
-// ESLint v9 flat config format
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+// ESLint v9 flat config format for Next.js 16
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
 const eslintConfig = [
-  // Apply to all files first
+  // Global ignores
   {
     ignores: [
       ".next/**",
       "node_modules/**",
       "out/**",
       ".pnpm-store/**",
-      "posts/**/*.mdx"  // Skip MDX files for now - they need special parsing
+      "build/**",
+      "next-env.d.ts",
+      "posts/**/*.mdx"  // Skip MDX files - they need special parsing
     ]
   },
 
-  // Next.js recommended configuration for JS/TS/JSX/TSX files
-  ...compat.extends("next/core-web-vitals"),
-  
+  // Next.js recommended configuration (native flat config support in Next.js 16)
+  ...nextCoreWebVitals,
+
   // TypeScript-specific configuration
   {
     files: ["**/*.ts", "**/*.tsx"],
@@ -69,7 +62,7 @@ const eslintConfig = [
       ]
     }
   },
-  
+
   // Configuration files
   {
     files: ["**/*.config.js", "**/*.config.mjs", "eslint.config.mjs"],
