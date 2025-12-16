@@ -36,5 +36,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-scratch.md
-notes.md
+# notes
+chalk_board.md
