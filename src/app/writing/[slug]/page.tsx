@@ -10,15 +10,15 @@ import COMPONENT_MAP from '@/utils/mdx-components'
 export async function generateMetadata(
   props: {
     params: Promise<{ slug: string }>
-  }
+  },
   // EXPLICIT RETURN TYPE: Helps catch errors and documents the function's purpose
 ): Promise<{ title: string; description: string }> {
   const params = await props.params
-  
+
   // SIMPLE DESTRUCTURING: Since loadBlogPost now returns properly typed data,
   // we don't need the complex type annotation that was here before
   const { frontMatter } = await loadBlogPost(params.slug)
-  
+
   return {
     title: `${frontMatter.title} | ${BLOG_TITLE}`,
     description: frontMatter.description,
@@ -26,8 +26,8 @@ export async function generateMetadata(
 }
 
 // EXPLICIT RETURN TYPE: React components should explicitly return JSX.Element
-async function PostPage(props: { 
-  params: Promise<{ slug: string }> 
+async function PostPage(props: {
+  params: Promise<{ slug: string }>
 }): Promise<React.JSX.Element> {
   const params = await props.params
   const { frontMatter, content, timeToRead } = await loadBlogPost(params.slug)
@@ -35,8 +35,10 @@ async function PostPage(props: {
   return (
     <div className="px-6 pt-6 pb-10 mx-auto my-10 max-w-[900px]">
       <CoolLetters>{frontMatter.title}</CoolLetters>
-      <span className="block py-4 my-6 text-xl">{frontMatter.date}</span>
-      <span className="block py-4 my-2 text-xl">{timeToRead}</span>
+      <span className="block md:py-4 pb-2 pt-4 md:my-6 my-2 md:text-xl text-lg italic">
+        {frontMatter.date}
+      </span>
+      <span className="block py-4 my-2 text-lg">{timeToRead}</span>
       <MDXRemote source={content} components={COMPONENT_MAP} />
       <Thanks />
     </div>

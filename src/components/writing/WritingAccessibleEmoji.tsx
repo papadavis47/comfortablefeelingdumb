@@ -1,14 +1,14 @@
-interface AccessibleEmojiProps {
+interface WritingAccessibleEmojiProps {
   emoji: string
   label?: string // Optional
   decorative?: boolean // For hiding from screen readers
 }
 
-export default function AccessibleEmoji({
+export default function WritingAccessibleEmoji({
   emoji,
   label,
   decorative = false,
-}: AccessibleEmojiProps) {
+}: WritingAccessibleEmojiProps) {
   if (decorative) {
     return <span aria-hidden="true">{emoji}</span>
   }
