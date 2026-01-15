@@ -6,6 +6,9 @@ import NavBar from '@/components/NavBar'
 import { BLOG_TITLE } from '@/utils/constants'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+  ),
   title: BLOG_TITLE,
   description: 'A blog about TypeScript, Go, Rust ( and trail running )',
 }

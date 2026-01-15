@@ -1,7 +1,5 @@
 // ESLint v9 flat config format for Next.js 16
 import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import typescriptParser from "@typescript-eslint/parser";
 
 const eslintConfig = [
   // Global ignores
@@ -18,25 +16,12 @@ const eslintConfig = [
   },
 
   // Next.js recommended configuration (native flat config support in Next.js 16)
+  // Includes @typescript-eslint plugin and parser
   ...nextCoreWebVitals,
 
   // TypeScript-specific configuration
   {
     files: ["**/*.ts", "**/*.tsx"],
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        project: "./tsconfig.json",
-        ecmaVersion: "latest",
-        sourceType: "module",
-        ecmaFeatures: {
-          jsx: true
-        }
-      }
-    },
-    plugins: {
-      "@typescript-eslint": typescriptEslint
-    },
     rules: {
       // TypeScript-specific rules
       "@typescript-eslint/no-explicit-any": "warn",
