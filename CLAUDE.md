@@ -68,13 +68,32 @@ export type MyFrontmatter = {
 ```
 
 ### Styling Approach
-- **Tailwind CSS v4**: Version 4.1.17 with custom color variables
+- **Tailwind CSS v4**: Version 4.1.17 with custom color variables in OKLCH color space
 - **Responsive Design**: Mobile-first approach with `sm:`, `md:`, `lg:` breakpoints
 - **Custom Components**: Writing components have consistent styling for typography
 - **Theme**: Uses custom CSS variables for colors defined in main.css
+- **Dark Mode**: Full dark mode support with system preference detection
+
+### Dark Mode / Theming System
+- **Color Variables**: All colors defined in `/src/styles/main.css` using OKLCH in `@theme` block
+- **Dark Mode**: `.dark` class on `<html>` overrides CSS variables for dark theme
+- **Theme Context**: `/src/contexts/ThemeContext.tsx` manages theme state
+- **Persistence**: User preference saved to localStorage (`theme-preference` key)
+- **System Preference**: Respects `prefers-color-scheme` on first visit
+- **FOIT Prevention**: Inline script in layout.tsx applies theme before React hydrates
+- **Hydration Safety**: Uses `useSyncExternalStore` to prevent SSR/client mismatch
+- **Toggle Placement**: Footer (all screens) + fixed upper-right (tablet/desktop via `hidden sm:block`)
+- **Transitions**: 150ms smooth transitions on background-color and border-color
+
+**Key Files:**
+- `src/styles/main.css` - Color definitions for light/dark modes
+- `src/contexts/ThemeContext.tsx` - Theme state, localStorage, system preference
+- `src/components/ThemeToggle.tsx` - Toggle button with FiSun/FiMoon icons
+- `src/components/FixedThemeToggle.tsx` - Fixed position wrapper for desktop
+- `src/app/layout.tsx` - ThemeProvider wrapper + inline FOIT prevention script
 
 ### Next.js Configuration Notes
-- **Version**: Next.js 16.0.8 (includes CVE-2025-66478 security patch)
+- **Version**: Next.js 16.1.2
 - **MDX Integration**: Requires `transpilePackages: ['next-mdx-remote']` for proper compilation
 - **File Tracing**: Includes `/posts/**/*` for deployment optimization
 - **App Router**: Uses Next.js App Router architecture with React Server Components
@@ -86,7 +105,8 @@ export type MyFrontmatter = {
 
 ### Development Notes
 - **Package Manager**: Uses `pnpm` (not npm/yarn)
-- **Versions**: Next.js 16.0.8, React 19.2.1, TypeScript 5.9.3
+- **Versions**: Next.js 16.1.2, React 19.2.1, TypeScript 5.9.3
+- **Directory Structure**: `src/app` (routes), `src/components`, `src/contexts`, `src/styles`, `src/utils`
 - **ESLint**: v9.39.1 with native Next.js 16 flat config support (no FlatCompat needed)
 - **ESLint Config**: Uses `eslint-config-next/core-web-vitals` directly in flat config format
 - **TypeScript-ESLint**: Works alongside ESLint - parser understands TypeScript, plugin provides TypeScript-specific rules

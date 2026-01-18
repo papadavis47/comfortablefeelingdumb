@@ -13,7 +13,7 @@ export default function WritingSubHeading({
 }: WritingSubHeadingProps): React.JSX.Element {
   return (
     <h2 
-      className='text-3xl lg:text-4xl text-slate-900 my-4 font-bold'
+      className='text-3xl lg:text-4xl text-strongest my-4 font-bold'
       {...props}
     >
       {children}

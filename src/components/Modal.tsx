@@ -39,12 +39,12 @@ function Modal({ closeModal, isOpen }: ModalProps) {
                 <Dialog.Panel className="h-auto max-w-5xl p-6 px-10 text-center align-middle transition-all transform shadow-xl rounded-xl bg-original">
                   <Dialog.Title
                     as="h3"
-                    className="mt-6 text-2xl font-semibold leading-6 text-gray-900 md:text-3xl"
+                    className="mt-6 text-2xl font-semibold leading-6 text-strongest md:text-3xl"
                   >
                     About This Blog
                   </Dialog.Title>
                   <div className="mt-6 scroll-auto">
-                    <p className="text-sm italic text-left text-gray-900 sm:text-justify md:px-10 md:text-lg">
+                    <p className="text-sm italic text-left text-strongest sm:text-justify md:px-10 md:text-lg">
                       These articles document my attempts to go beyond what is
                       comfortable to me as a software engineer. I try to be at
                       peace with the daily feelings of being at the edge of my
@@ -61,7 +61,7 @@ function Modal({ closeModal, isOpen }: ModalProps) {
                   <div className="mt-6 md:mt-12">
                     <button
                       type="button"
-                      className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center px-4 py-2 text-sm font-medium text-strongest bg-subjects/20 border border-transparent rounded-md hover:bg-subjects/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-subjects focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
                       Close
