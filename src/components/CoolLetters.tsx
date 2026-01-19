@@ -8,7 +8,7 @@ interface CoolLettersProps {
 // EXPLICIT TYPING: Both parameters and return type are now clearly defined
 function CoolLetters({ children }: CoolLettersProps): React.JSX.Element {
   return (
-    <h1 className="bg-gradient-to-l from-headings to-secondary bg-clip-text pb-2  text-4xl font-extrabold capitalize text-transparent lg:text-7xl">
+    <h1 className="bg-linear-to-l from-headings to-secondary bg-clip-text pb-2  text-4xl font-extrabold capitalize text-transparent lg:text-7xl">
       {children}
     </h1>
   )

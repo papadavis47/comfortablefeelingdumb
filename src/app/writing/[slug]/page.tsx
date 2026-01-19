@@ -5,18 +5,11 @@ import { loadBlogPost } from '@/utils/helpers'
 import { BLOG_TITLE } from '@/utils/constants'
 import COMPONENT_MAP from '@/utils/mdx-components'
 
-// PROPER TYPING: We now use our BlogPostData type and don't need complex type annotations
-// The original complex type annotation was incorrect and unnecessary
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>
-  },
-  // EXPLICIT RETURN TYPE: Helps catch errors and documents the function's purpose
-): Promise<{ title: string; description: string }> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>
+}): Promise<{ title: string; description: string }> {
   const params = await props.params
 
-  // SIMPLE DESTRUCTURING: Since loadBlogPost now returns properly typed data,
-  // we don't need the complex type annotation that was here before
   const { frontMatter } = await loadBlogPost(params.slug)
 
   return {
