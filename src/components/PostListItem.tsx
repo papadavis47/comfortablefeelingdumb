@@ -9,7 +9,7 @@ type ListItemProps = {
 
 function PostListItem({ frontMatter, readingTime, slug }: ListItemProps) {
   return (
-    <div className="my-4 rounded-lg bg-original p-6 shadow-lg">
+    <div className="-mx-3 my-4 w-[calc(100%+1.5rem)] rounded-lg bg-original p-6 shadow-lg sm:mx-0 sm:w-full">
       <div className="flex flex-col ">
         <Link href={`/writing/${slug}`}>
           <div className="group hover:cursor-pointer">

@@ -15,7 +15,7 @@ async function PostList({
   }
 
   return (
-    <div className="-mx-3 mb-6 mt-2 flex w-full flex-col pb-6 pt-4 sm:mx-0 sm:max-w-4xl sm:pt-8">
+    <div className="mb-6 mt-2 flex w-full flex-col pb-6 pt-4 sm:max-w-4xl sm:pt-8">
       {posts.map((post) => {
         return <PostListItem {...post} key={post.frontMatter.id} />
       })}
