@@ -35,10 +35,10 @@ async function PostPage(props: {
   return (
     <div className="px-6 pt-6 pb-10 mx-auto my-10 max-w-[900px]">
       <CoolLetters>{frontMatter.title}</CoolLetters>
-      <span className="block md:py-4 pb-2 pt-4 md:my-6 my-2 md:text-xl text-lg italic">
+      <span className="block md:py-4 pb-2 pt-4 md:my-6 my-2 md:text-xl text-lg italic text-subtle">
         {frontMatter.date}
       </span>
-      <span className="block py-4 my-2 text-lg">{timeToRead}</span>
+      <span className="block py-4 my-2 text-lg text-subtle">{timeToRead}</span>
       <MDXRemote source={content} components={COMPONENT_MAP} />
       <Thanks />
     </div>

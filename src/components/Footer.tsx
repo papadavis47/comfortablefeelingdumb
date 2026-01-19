@@ -44,7 +44,7 @@ function Footer(): React.JSX.Element {
             MDX
           </a>
         </p>
-        <p className="py-3 text-md md:pb-4">
+        <div className="py-3 text-md md:pb-4 flex items-center justify-between">
           <a
             href="https://www.johnwilliamdavis.com"
             target="_blank"
@@ -56,9 +56,9 @@ function Footer(): React.JSX.Element {
               {new Date().getFullYear()}
             </span>
           </a>
-        </p>
-        <div className="pt-2">
-          <ThemeToggle size={24} />
+          <div className="sm:hidden">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </footer>
