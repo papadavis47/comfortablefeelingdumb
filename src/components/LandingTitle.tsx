@@ -1,6 +1,6 @@
 function LandingTitle() {
   return (
-    <div className="text-neutral-800">
+    <div className="text-strongest">
       <h1 className="bg-linear-to-r from-headings to-secondary bg-clip-text pb-2 text-5xl font-extrabold tracking-tighter text-transparent md:text-center lg:text-7xl">
         Comfortable Feeling Dumb
       </h1>

@@ -1,6 +1,10 @@
-const Footer = () => {
+'use client'
+
+import ThemeToggle from '@/components/ThemeToggle'
+
+function Footer(): React.JSX.Element {
   return (
-    <footer className="w-full py-4 font-semibold bg-slate-200 text-darkness">
+    <footer className="w-full py-4 font-semibold bg-footer text-darkness">
       <div className="px-6 py-4 mx-auto md:max-w-4xl">
         <p className="mt-2 md:text-lg">
           Built with{' '}
@@ -40,7 +44,7 @@ const Footer = () => {
             MDX
           </a>
         </p>
-        <p className="py-3 text-md md:pb-4">
+        <div className="py-3 text-md md:pb-4 flex items-center justify-between">
           <a
             href="https://www.johnwilliamdavis.com"
             target="_blank"
@@ -52,7 +56,10 @@ const Footer = () => {
               {new Date().getFullYear()}
             </span>
           </a>
-        </p>
+          <div className="sm:hidden">
+            <ThemeToggle />
+          </div>
+        </div>
       </div>
     </footer>
   )
