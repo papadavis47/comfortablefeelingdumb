@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
 import FixedThemeToggle from '@/components/FixedThemeToggle'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import { TransitionProvider } from '@/components/TransitionProvider'
 import { BLOG_TITLE } from '@/utils/constants'
 
 const themeScript = `
@@ -42,12 +43,14 @@ export default function RootLayout({
       </head>
       <body className="h-full">
         <ThemeProvider>
-          <FixedThemeToggle />
-          <div className="flex flex-col min-h-screen bg-background px-1.5 md:px-0">
-            <NavBar />
-            <section className="flex-1">{children}</section>
-            <Footer />
-          </div>
+          <TransitionProvider>
+            <FixedThemeToggle />
+            <div className="flex flex-col min-h-screen bg-background px-1.5 md:px-0">
+              <NavBar />
+              <section className="flex-1">{children}</section>
+              <Footer />
+            </div>
+          </TransitionProvider>
         </ThemeProvider>
       </body>
     </html>

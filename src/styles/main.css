@@ -36,3 +36,13 @@
   transition: background-color 150ms ease-in-out,
               border-color 150ms ease-in-out;
 }
+
+/* Page transition scale origin */
+section.flex-1 {
+  transform-origin: center center;
+}
+
+/* Prevent horizontal scrollbar flash during scale transitions */
+body {
+  overflow-x: hidden;
+}
