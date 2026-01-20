@@ -31,6 +31,10 @@ export function TypewriterText({
   staggerDuration = 0.03,
   className,
 }: TypewriterTextProps): React.JSX.Element {
+  // Split into words (preserving spaces as separate elements for animation)
+  const words = text.split(/(\s+)/)
+  let charIndex = 0
+
   return (
     <motion.span
       className={className}
@@ -39,11 +43,33 @@ export function TypewriterText({
       animate="visible"
       custom={{ delay, stagger: staggerDuration }}
     >
-      {text.split('').map((char, index) => (
-        <motion.span key={index} variants={letterVariants} style={char === ' ' ? { whiteSpace: 'pre' } : undefined}>
-          {char}
-        </motion.span>
-      ))}
+      {words.map((word, wordIndex) => {
+        const isSpace = /^\s+$/.test(word)
+        if (isSpace) {
+          // Render spaces directly with animation
+          return word.split('').map((char) => {
+            const key = charIndex++
+            return (
+              <motion.span key={key} variants={letterVariants} style={{ whiteSpace: 'pre' }}>
+                {char}
+              </motion.span>
+            )
+          })
+        }
+        // Wrap each word in inline-block span so words can wrap but letters stay together
+        return (
+          <span key={wordIndex} style={{ display: 'inline-block' }}>
+            {word.split('').map((char) => {
+              const key = charIndex++
+              return (
+                <motion.span key={key} variants={letterVariants}>
+                  {char}
+                </motion.span>
+              )
+            })}
+          </span>
+        )
+      })}
     </motion.span>
   )
 }
