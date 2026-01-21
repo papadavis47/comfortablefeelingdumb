@@ -18,7 +18,6 @@ export async function generateMetadata(props: {
   }
 }
 
-// EXPLICIT RETURN TYPE: React components should explicitly return JSX.Element
 async function PostPage(props: {
   params: Promise<{ slug: string }>
 }): Promise<React.JSX.Element> {
