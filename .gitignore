@@ -38,3 +38,6 @@ yarn-error.log*
 
 # notes
 chalk_board.md
+
+# Claude Code
+.claude/
