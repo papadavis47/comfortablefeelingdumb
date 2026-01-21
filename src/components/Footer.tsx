@@ -6,7 +6,7 @@ function Footer(): React.JSX.Element {
   return (
     <footer className="w-full py-4 font-semibold bg-footer text-darkness">
       <div className="px-6 py-4 mx-auto md:max-w-4xl">
-        <p className="mt-2 md:text-lg">
+        <p className="mt-2 md:text-lg text-md">
           Built with{' '}
           <a
             href="https://typescriptlang.org"
@@ -44,7 +44,7 @@ function Footer(): React.JSX.Element {
             MDX
           </a>
         </p>
-        <div className="py-3 text-md md:pb-4 flex items-center justify-between">
+        <div className="py-3 md:pb-4 flex items-center justify-between text-md">
           <a
             href="https://www.johnwilliamdavis.com"
             target="_blank"
@@ -52,8 +52,8 @@ function Footer(): React.JSX.Element {
             className="inline-block hover:text-subjects"
           >
             <span>
-              &copy; John William Davis &nbsp;
-              {new Date().getFullYear()}
+              &copy;&nbsp;
+              {new Date().getFullYear()}&nbsp; John William Davis.{' '}
             </span>
           </a>
           <div className="sm:hidden">

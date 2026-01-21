@@ -18,7 +18,6 @@ function PostListItem({ frontMatter, readingTime, slug }: ListItemProps) {
             </h1>
             <p className="mt-3 pb-2 text-lg font-semibold italic text-strong sm:text-xl">
               {frontMatter.description}
-              <span> . . .</span>
             </p>
             <p className="text-md mb-4 font-semibold text-">{readingTime}</p>
           </div>
