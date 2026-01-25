@@ -10,8 +10,8 @@ class UpstashStorage implements LikesStorage {
 
   constructor() {
     this.redis = new Redis({
-      url: process.env.UPSTASH_REDIS_REST_URL!,
-      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+      url: process.env.KV_REST_API_URL!,
+      token: process.env.KV_REST_API_TOKEN!,
     })
   }
 
@@ -45,10 +45,7 @@ let storage: LikesStorage | null = null
 export function getLikesStorage(): LikesStorage {
   if (storage) return storage
 
-  if (
-    process.env.UPSTASH_REDIS_REST_URL &&
-    process.env.UPSTASH_REDIS_REST_TOKEN
-  ) {
+  if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
     storage = new UpstashStorage()
   } else {
     console.warn('Upstash Redis not configured, using in-memory storage')

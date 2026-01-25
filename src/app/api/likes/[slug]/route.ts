@@ -2,6 +2,8 @@ import { type NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { getLikesStorage } from '@/lib/likes-storage'
 
+export const dynamic = 'force-dynamic'
+
 const COOKIE_PREFIX = 'liked_'
 const ONE_YEAR_SECONDS = 60 * 60 * 24 * 365
 
