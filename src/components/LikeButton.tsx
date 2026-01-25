@@ -52,7 +52,7 @@ function LikeButton({ slug }: LikeButtonProps) {
     <button
       onClick={handleLike}
       disabled={hasLiked || isLoading}
-      className="flex items-center gap-2 text-xl text-strong disabled:cursor-default"
+      className="flex items-center gap-2 text-xl text-strong cursor-pointer disabled:cursor-default"
       aria-label={hasLiked ? 'Already liked' : 'Like this post'}
     >
       <AnimatePresence mode="wait">
