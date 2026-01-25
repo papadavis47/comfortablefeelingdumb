@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
+    "@upstash/redis": "^1.36.1",
     "bright": "^1.0.0",
     "clsx": "^2.1.1",
     "eslint-config-next": "16.1.2",

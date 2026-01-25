@@ -32,7 +32,7 @@ async function PostPage(props: {
       </span>
       <span className="block py-4 my-2 text-lg text-subtle">{timeToRead}</span>
       <MDXRemote source={content} components={COMPONENT_MAP} />
-      <Thanks />
+      <Thanks slug={params.slug} />
     </div>
   )
 }
