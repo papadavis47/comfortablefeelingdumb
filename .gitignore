@@ -41,3 +41,6 @@ chalk_board.md
 
 # Claude Code
 .claude/
+
+# Amp agents
+.agents/
