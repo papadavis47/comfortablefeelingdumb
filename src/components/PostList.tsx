@@ -1,4 +1,4 @@
-import PostListItem from '@/components/PostListItem'
+import PostListClient from '@/components/PostListClient'
 import { getAllPosts } from '@/utils/helpers'
 
 type PostListProps = {
@@ -14,13 +14,7 @@ async function PostList({
     posts = posts.filter((post) => post.frontMatter.topics.includes(subject))
   }
 
-  return (
-    <div className="mb-6 mt-2 flex w-full flex-col pb-6 pt-4 sm:max-w-4xl sm:pt-8">
-      {posts.map((post) => {
-        return <PostListItem {...post} key={post.frontMatter.id} />
-      })}
-    </div>
-  )
+  return <PostListClient posts={posts} />
 }
 
 export default PostList
