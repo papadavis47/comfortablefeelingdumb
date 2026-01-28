@@ -1,6 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import CoolLetters from '@/components/CoolLetters'
 import Thanks from '@/components/Thanks'
+import EmailAuthor from '@/components/EmailAuthor'
 import { loadBlogPost } from '@/utils/helpers'
 import { BLOG_TITLE } from '@/utils/constants'
 import COMPONENT_MAP from '@/utils/mdx-components'
@@ -33,6 +34,7 @@ async function PostPage(props: {
       <span className="block py-4 my-2 text-lg text-subtle">{timeToRead}</span>
       <MDXRemote source={content} components={COMPONENT_MAP} />
       <Thanks slug={params.slug} />
+      <EmailAuthor />
     </div>
   )
 }
