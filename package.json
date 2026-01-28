@@ -21,7 +21,7 @@
     "gray-matter": "^4.0.3",
     "install": "^0.13.0",
     "motion": "^12.27.1",
-    "next": "16.1.2",
+    "next": "16.1.5",
     "next-mdx-remote": "latest",
     "next-transition-router": "^0.2.11",
     "react": "19.2.3",
