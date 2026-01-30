@@ -4,7 +4,7 @@ import LikeButton from './LikeButton'
 function Thanks({ slug }: { slug: string }) {
   return (
     <div className="flex flex-col gap-4 py-3 md:flex-row md:items-center md:justify-between">
-      <div className="text-xl text-strong">
+      <div className="text-lg lg:text-xl text-strong">
         <p className="font-semibold my-4">Thanks for reading!</p>
         <Link href="/">
           <p className="flex max-w-fit cursor-pointer items-center">
