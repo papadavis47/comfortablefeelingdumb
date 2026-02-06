@@ -14,9 +14,9 @@ const SubjectPage = async (props: { params: Promise<{ topic: string }> }) => {
     // min-h-screen keeps footer below the fold when few posts match the subject
     <div className="mt-6 flex min-h-screen flex-col items-center py-2">
       <FilteredTitle subject={subject} />
-      <main className="flex w-full flex-1 flex-col items-center justify-start px-6 md:px-20">
+      <div className="flex w-full flex-1 flex-col items-center justify-start px-6 md:px-20">
         <PostList subject={subject} />
-      </main>
+      </div>
     </div>
   )
 }

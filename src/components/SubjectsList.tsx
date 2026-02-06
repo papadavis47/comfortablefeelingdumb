@@ -9,13 +9,12 @@ async function SubjectsList() {
   return (
     <div className="mb-6 flex w-full flex-wrap pb-12 sm:max-w-4xl">
       {subjects?.map((topic, index) => (
-        <Link href={`/subject/${topic}`} key={index}>
-          <button
-            type="button"
-            className="cursor-pointer mx-1 mt-2 items-center rounded-full border border-transparent bg-subjects px-4 py-2.5 font-mono text-sm font-semibold lowercase leading-4 text-original shadow-sm focus:outline-none focus:ring-2 focus:ring-subjects focus:ring-offset-2"
-          >
-            {topic}
-          </button>
+        <Link
+          href={`/subject/${topic}`}
+          key={index}
+          className="inline-flex cursor-pointer mx-1 mt-2 items-center rounded-full border border-transparent bg-subjects px-4 py-2.5 font-mono text-sm font-semibold lowercase leading-4 text-original shadow-sm focus:ring-2 focus:ring-subjects focus:ring-offset-2"
+        >
+          {topic}
         </Link>
       ))}
     </div>

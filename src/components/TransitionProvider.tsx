@@ -13,14 +13,14 @@ export function TransitionProvider({
       auto={true}
       leave={(next) => {
         animate(
-          'section.flex-1',
+          'main.flex-1',
           { opacity: [1, 0], scale: [1, 0.98] },
           { duration: 0.3, ease: 'easeOut' }
         ).then(next)
       }}
       enter={(next) => {
         animate(
-          'section.flex-1',
+          'main.flex-1',
           { opacity: [0, 1], scale: [1.02, 1] },
           { duration: 0.3, ease: 'easeOut' }
         ).then(next)

@@ -13,13 +13,11 @@ export default function NotFound() {
           Either way, no content here . . .{' '}
         </p>
         <div className="py-6">
-          <Link href="/">
-            <button
-              type="button"
-              className="rounded-md bg-original px-3.5 py-2.5 text-lg font-semibold text-secondary shadow-sm ring-1 ring-inset ring-subtle/30 hover:bg-background"
-            >
-              Go Back
-            </button>
+          <Link
+            href="/"
+            className="inline-block rounded-md bg-original px-3.5 py-2.5 text-lg font-semibold text-secondary shadow-sm ring-1 ring-inset ring-subtle/30 hover:bg-background"
+          >
+            Go Back
           </Link>
         </div>
       </section>

@@ -42,12 +42,18 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="h-full">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-original focus:px-4 focus:py-2 focus:text-strongest focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider>
           <TransitionProvider>
             <FixedThemeToggle />
             <div className="flex flex-col min-h-screen bg-background px-1.5 md:px-0">
               <NavBar />
-              <section className="flex-1">{children}</section>
+              <main id="main-content" className="flex-1">{children}</main>
               <Footer />
             </div>
           </TransitionProvider>

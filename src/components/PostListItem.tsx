@@ -48,9 +48,9 @@ function PostListItem({
       <div className="flex flex-col">
         <Link href={`/writing/${slug}`}>
           <div className="group hover:cursor-pointer">
-            <h1 className="cursor-pointer pt-2 text-2xl font-bold capitalize text-headings group-hover:text-secondary">
+            <h2 className="cursor-pointer pt-2 text-2xl font-bold capitalize text-headings group-hover:text-secondary">
               {frontMatter.title}
-            </h1>
+            </h2>
             <p className="mt-3 pb-2 text-lg font-semibold italic text-strong sm:text-xl">
               {frontMatter.description}
             </p>

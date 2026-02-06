@@ -12,7 +12,7 @@ function Footer(): React.JSX.Element {
             href="https://typescriptlang.org"
             className="hover:text-subjects"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             TypeScript
           </a>
@@ -21,7 +21,7 @@ function Footer(): React.JSX.Element {
             href="https://nextjs.org"
             className="hover:text-subjects"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             Next.js 16
           </a>
@@ -30,7 +30,7 @@ function Footer(): React.JSX.Element {
             href="https://tailwindcss.com"
             className="hover:text-subjects"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             TailwindCSS v4
           </a>{' '}
@@ -39,7 +39,7 @@ function Footer(): React.JSX.Element {
             href="https://mdxjs.com/"
             className="hover:text-subjects"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             MDX
           </a>
@@ -48,7 +48,7 @@ function Footer(): React.JSX.Element {
           <a
             href="https://www.johnwilliamdavis.com"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
             className="inline-block hover:text-subjects"
           >
             <span>

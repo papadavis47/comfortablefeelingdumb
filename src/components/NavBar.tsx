@@ -57,7 +57,7 @@ function NavBar(): React.JSX.Element {
         <div className="flex justify-between text-darkness sm:mx-auto sm:max-w-7xl">
           {/* left */}
           <div className="hover:text-shift">
-            <Link href="/">
+            <Link href="/" aria-label="Home">
               <ImHome size={30} />
             </Link>
           </div>
@@ -66,8 +66,9 @@ function NavBar(): React.JSX.Element {
             <a
               href="https://bsky.app/profile/johnwilliamdavis.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
               className="hover:text-shift"
+              aria-label="Bluesky profile"
             >
               <SiBluesky size={30} />
             </a>
@@ -75,22 +76,30 @@ function NavBar(): React.JSX.Element {
               href="https://github.com/papadavis47/comfortablefeelingdumb"
               target="_blank"
               className="hover:text-shift"
-              rel="noreferrer"
+              rel="noreferrer noopener"
+              aria-label="GitHub repository"
             >
               <VscGithubInverted size={30} />
             </a>
             <a
               href="https://stackoverflow.com/users/9111781/jwdavis"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
               className="hover:text-shift"
+              aria-label="StackOverflow profile"
             >
               <SiStackoverflow size={30} />
             </a>
           </div>
           {/* right */}
           <div className={`${isOpen ? 'invisible' : null}`}>
-            <button className="hover:text-shift" onClick={toggleModal}>
+            <button
+              className="hover:text-shift"
+              onClick={toggleModal}
+              aria-label="About this blog"
+              aria-haspopup="dialog"
+              aria-expanded={isOpen}
+            >
               <CgDetailsMore size={30} />
             </button>
           </div>
