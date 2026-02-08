@@ -51,7 +51,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "types": ["vitest/globals"]
     // Note: Removed duplicate "strictNullChecks": true since it's included in "strict": true
   },
   "include": [
@@ -62,6 +63,9 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "vitest.config.ts",
+    "playwright.config.ts",
+    "e2e"
   ]
 }
