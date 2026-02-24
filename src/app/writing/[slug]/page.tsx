@@ -34,7 +34,7 @@ async function PostPage(props: {
       <span className="block py-4 my-2 text-md md:text-lg  text-subtle">
         {timeToRead}
       </span>
-      <MDXRemote source={content} components={COMPONENT_MAP} />
+      <MDXRemote source={content} components={COMPONENT_MAP} options={{ blockJS: false }} />
       <Thanks slug={params.slug} />
       <EmailAuthor />
     </div>
