@@ -42,6 +42,9 @@ yarn-error.log*
 # notes
 chalk_board.md
 
+# learning
+learning/*
+
 # Claude Code
 .claude/
 
