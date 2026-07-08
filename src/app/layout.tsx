@@ -6,7 +6,7 @@ import NavBar from '@/components/NavBar'
 import FixedThemeToggle from '@/components/FixedThemeToggle'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { TransitionProvider } from '@/components/TransitionProvider'
-import { BLOG_TITLE } from '@/utils/constants'
+import { BLOG_TITLE } from '@/lib/constants'
 
 const themeScript = `
 (function() {

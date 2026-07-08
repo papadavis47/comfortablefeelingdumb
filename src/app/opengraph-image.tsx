@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og'
-import { BLOG_TITLE } from '@/utils/constants'
+import { BLOG_TITLE } from '@/lib/constants'
 
 export const alt = BLOG_TITLE
 export const size = {

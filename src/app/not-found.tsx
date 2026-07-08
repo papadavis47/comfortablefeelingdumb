@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import CoolLetters from '@/components/CoolLetters'
+import CoolLetters from '@/design-system/CoolLetters'
 
 export default function NotFound() {
   return (

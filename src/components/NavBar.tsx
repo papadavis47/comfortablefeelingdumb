@@ -6,9 +6,9 @@ import { SiBluesky } from 'react-icons/si'
 import { ImHome } from 'react-icons/im'
 import { SiStackoverflow } from 'react-icons/si'
 import { CgDetailsMore } from 'react-icons/cg'
-import { debounce } from '@/utils/debounce'
+import { debounce } from '@/lib/debounce'
 import Link from 'next/link'
-import Modal from '@/components/Modal'
+import Modal from '@/design-system/Modal'
 
 // REMOVED UNUSED IMPORTS: VscTwitter and FaSquareXTwitter were not being used
 // The strict mode caught these unused imports

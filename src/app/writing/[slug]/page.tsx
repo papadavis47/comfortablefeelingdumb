@@ -1,9 +1,9 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import CoolLetters from '@/components/CoolLetters'
+import CoolLetters from '@/design-system/CoolLetters'
 import Thanks from '@/components/Thanks'
 import EmailAuthor from '@/components/EmailAuthor'
 import { loadBlogPost } from '@/utils/helpers'
-import { BLOG_TITLE } from '@/utils/constants'
+import { BLOG_TITLE } from '@/lib/constants'
 import COMPONENT_MAP from '@/utils/mdx-components'
 
 export async function generateMetadata(props: {
