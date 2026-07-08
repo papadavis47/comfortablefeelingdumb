@@ -1,4 +1,4 @@
-import LandingTitle from '@/components/LandingTitle'
+import LandingTitle from '@/features/home/LandingTitle'
 import PostList from '@/components/PostList'
 import SubjectsList from '@/components/SubjectsList'
 

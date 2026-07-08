@@ -1,6 +1,6 @@
 'use client'
 
-import ThemeToggle from '@/components/ThemeToggle'
+import ThemeToggle from '@/features/theme/ThemeToggle'
 
 function Footer(): React.JSX.Element {
   return (

@@ -1,6 +1,6 @@
 'use client'
 
-import ThemeToggle from '@/components/ThemeToggle'
+import ThemeToggle from '@/features/theme/ThemeToggle'
 
 export default function FixedThemeToggle(): React.JSX.Element {
   return (

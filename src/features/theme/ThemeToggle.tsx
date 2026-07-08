@@ -2,7 +2,7 @@
 
 import { useSyncExternalStore } from 'react'
 import { FiSun, FiMoon } from 'react-icons/fi'
-import { useTheme } from '@/contexts/ThemeContext'
+import { useTheme } from '@/features/theme/ThemeContext'
 
 type ThemeToggleProps = {
   size?: number

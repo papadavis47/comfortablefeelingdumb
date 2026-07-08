@@ -1,11 +1,11 @@
 import { type Metadata } from 'next'
 import '@/styles/main.css'
 import { GeistSans } from 'geist/font/sans'
-import Footer from '@/components/Footer'
-import NavBar from '@/components/NavBar'
-import FixedThemeToggle from '@/components/FixedThemeToggle'
-import { ThemeProvider } from '@/contexts/ThemeContext'
-import { TransitionProvider } from '@/components/TransitionProvider'
+import Footer from '@/features/layout/Footer'
+import NavBar from '@/features/layout/NavBar'
+import FixedThemeToggle from '@/features/theme/FixedThemeToggle'
+import { ThemeProvider } from '@/features/theme/ThemeContext'
+import { TransitionProvider } from '@/features/layout/TransitionProvider'
 import { BLOG_TITLE } from '@/lib/constants'
 
 const themeScript = `
