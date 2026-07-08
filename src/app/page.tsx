@@ -1,6 +1,6 @@
 import LandingTitle from '@/features/home/LandingTitle'
-import PostList from '@/components/PostList'
-import SubjectsList from '@/components/SubjectsList'
+import PostList from '@/features/posts/PostList'
+import SubjectsList from '@/features/posts/subjects/SubjectsList'
 
 export default function Home() {
   return (

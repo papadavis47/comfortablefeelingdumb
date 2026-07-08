@@ -4,6 +4,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
 import { notFound } from 'next/navigation'
+import type { MyFrontmatter, Post } from './types'
 
 // EXPLICIT RETURN TYPES: These help TypeScript catch errors and improve IDE support
 function readDirectory(localPath: string): Promise<string[]> {
@@ -12,21 +13,6 @@ function readDirectory(localPath: string): Promise<string[]> {
 
 function readFile(localPath: string): Promise<string> {
   return fs.readFile(path.join(process.cwd(), localPath), 'utf8')
-}
-
-export type MyFrontmatter = {
-  title: string
-  id: number
-  date: string
-  description: string
-  topics: string[]
-  isDraft: boolean
-}
-
-export type Post = {
-  slug: string
-  frontMatter: MyFrontmatter
-  readingTime: string
 }
 
 // TYPE GUARD: This function validates that an unknown object matches our MyFrontmatter type

@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import PostListItem from '@/components/PostListItem'
-import { type MyFrontmatter } from '@/utils/helpers'
+import PostListItem from '@/features/posts/PostListItem'
+import { type MyFrontmatter } from '@/features/posts/types'
 
 type Post = {
   frontMatter: MyFrontmatter

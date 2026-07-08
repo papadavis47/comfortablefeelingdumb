@@ -16,7 +16,7 @@ const mockStorage = {
   incrementLikes: vi.fn(),
 }
 
-vi.mock('@/lib/likes-storage', () => ({
+vi.mock('@/features/posts/likes/likes-storage', () => ({
   getLikesStorage: () => mockStorage,
 }))
 

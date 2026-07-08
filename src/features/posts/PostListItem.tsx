@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'motion/react'
-import { type MyFrontmatter } from '@/utils/helpers'
+import { type MyFrontmatter } from '@/features/posts/types'
 
 type ListItemProps = {
   frontMatter: MyFrontmatter

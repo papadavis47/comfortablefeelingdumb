@@ -16,7 +16,7 @@ vi.mock('next/navigation', () => ({
 }))
 
 import fs from 'fs/promises'
-import { getAllPosts, getSlugsOnly, getSubjectsOnly, loadBlogPost } from '../helpers'
+import { getAllPosts, getSlugsOnly, getSubjectsOnly, loadBlogPost } from '../posts'
 
 const validPost = `---
 title: Test Post

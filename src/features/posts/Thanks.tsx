@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import LikeButton from './LikeButton'
+import LikeButton from './likes/LikeButton'
 
 function Thanks({ slug }: { slug: string }) {
   return (

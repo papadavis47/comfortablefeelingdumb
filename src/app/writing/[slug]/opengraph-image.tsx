@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og'
-import { loadBlogPost } from '@/utils/helpers'
+import { loadBlogPost } from '@/features/posts/posts'
 import { BLOG_TITLE } from '@/lib/constants'
 
 export const alt = 'Blog post preview'

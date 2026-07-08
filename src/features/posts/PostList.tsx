@@ -1,5 +1,5 @@
-import PostListClient from '@/components/PostListClient'
-import { getAllPosts } from '@/utils/helpers'
+import PostListClient from '@/features/posts/PostListClient'
+import { getAllPosts } from '@/features/posts/posts'
 
 type PostListProps = {
   subject?: string

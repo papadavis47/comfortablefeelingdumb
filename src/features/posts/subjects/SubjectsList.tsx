@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getAllPosts } from '@/utils/helpers'
+import { getAllPosts } from '@/features/posts/posts'
 
 async function SubjectsList() {
   const posts = await getAllPosts()

@@ -1,7 +1,7 @@
-import PostList from '@/components/PostList'
+import PostList from '@/features/posts/PostList'
 import { notFound } from 'next/navigation'
-import FilteredTitle from '@/components/FilteredTitle'
-import { getSubjectsOnly } from '@/utils/helpers'
+import FilteredTitle from '@/features/posts/subjects/FilteredTitle'
+import { getSubjectsOnly } from '@/features/posts/posts'
 
 const SubjectPage = async (props: { params: Promise<{ topic: string }> }) => {
   const params = await props.params;

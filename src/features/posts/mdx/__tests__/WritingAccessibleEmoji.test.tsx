@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import WritingAccessibleEmoji from '../writing/WritingAccessibleEmoji'
+import WritingAccessibleEmoji from '../WritingAccessibleEmoji'
 
 describe('WritingAccessibleEmoji', () => {
   it('renders emoji with role="img" and aria-label', () => {

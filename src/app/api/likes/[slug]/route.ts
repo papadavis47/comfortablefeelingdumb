@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { getLikesStorage } from '@/lib/likes-storage'
+import { getLikesStorage } from '@/features/posts/likes/likes-storage'
 
 export const dynamic = 'force-dynamic'
 
