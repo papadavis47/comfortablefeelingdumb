@@ -40,10 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 
 # notes
-chalk_board.md
-
-# learning
-learning/*
+learning/
 
 # Claude Code
 .claude/
