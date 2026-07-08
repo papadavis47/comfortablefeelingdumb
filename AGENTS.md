@@ -121,4 +121,4 @@ Reusable agent skills (agent-skills `SKILL.md` spec) live in this repo but are *
 - **Claude Code discovery**: `.claude/skills` is a symlink to `../.agents/skills`, so Claude Code auto-discovers the same physical files.
 - Both dirs are gitignored; add skills locally per machine.
 
-Current skills: `react-best-practices` (Vercel React/Next.js performance guide), `web-design-guidelines`.
+Current skills: `web-design-guidelines`.
