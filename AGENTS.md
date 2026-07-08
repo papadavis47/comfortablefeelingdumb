@@ -25,6 +25,31 @@ pnpm pre-commit         # Comprehensive check with auto-fix for commits
 
 ## Architecture & Key Patterns
 
+### Code Organization (vertical / feature-based)
+
+Code is grouped by feature/domain, not by technical type ("code that changes together lives together"). Single `@/*` alias → `src/*`; no barrel files, no boundary-lint rules.
+
+```
+src/
+  app/                    # routes only (thin); api/likes route lives here (App Router requirement)
+  features/
+    posts/                # blog-content domain
+      posts.ts            # data layer: getAllPosts, loadBlogPost, getSubjectsOnly
+      types.ts            # MyFrontmatter, Post
+      PostList*.tsx  EmailAuthor.tsx  Thanks.tsx
+      mdx/                # MDX render layer: mdx-components, CodeSnippet, Writing* components
+      likes/              # LikeButton + likes-storage
+      subjects/           # SubjectsList, FilteredTitle
+    theme/                # ThemeContext, ThemeToggle, FixedThemeToggle
+    home/                 # LandingTitle, TypewriterText
+    layout/               # NavBar, Footer, TransitionProvider (site shell)
+  design-system/          # reusable non-domain UI: Modal, CoolLetters
+  lib/                    # generic utils: debounce, constants
+  styles/                 # main.css
+```
+
+Tests are colocated in a `__tests__/` folder beside the code they cover.
+
 ### Content Management System
 - **MDX Posts**: Content lives in `/posts/*.mdx` with frontmatter validation
 - **Type Guards**: Runtime validation of frontmatter using `isValidFrontmatter()` instead of type assertions
@@ -45,8 +70,8 @@ pnpm pre-commit         # Comprehensive check with auto-fix for commits
 - **JSX Transform**: Uses `"jsx": "react-jsx"` (React automatic runtime, set by Next.js 16)
 
 ### MDX Component Architecture
-- **Component Mapping**: `COMPONENT_MAP` in `/src/utils/mdx-components.ts` maps HTML elements to custom components
-- **Writing Components**: Custom styled components in `/src/components/writing/` that extend standard HTML props
+- **Component Mapping**: `COMPONENT_MAP` in `/src/features/posts/mdx/mdx-components.ts` maps HTML elements to custom components
+- **Writing Components**: Custom styled components in `/src/features/posts/mdx/` that extend standard HTML props
 - **MDX Integration**: Uses `next-mdx-remote/rsc` with custom component overrides
 
 ### Routing Structure
@@ -77,7 +102,7 @@ export type MyFrontmatter = {
 ### Dark Mode / Theming System
 - **Color Variables**: All colors defined in `/src/styles/main.css` using OKLCH in `@theme` block
 - **Dark Mode**: `.dark` class on `<html>` overrides CSS variables for dark theme
-- **Theme Context**: `/src/contexts/ThemeContext.tsx` manages theme state
+- **Theme Context**: `/src/features/theme/ThemeContext.tsx` manages theme state
 - **Persistence**: User preference saved to localStorage (`theme-preference` key)
 - **System Preference**: Respects `prefers-color-scheme` on first visit
 - **FOIT Prevention**: Inline script in layout.tsx applies theme before React hydrates
@@ -87,9 +112,9 @@ export type MyFrontmatter = {
 
 **Key Files:**
 - `src/styles/main.css` - Color definitions for light/dark modes
-- `src/contexts/ThemeContext.tsx` - Theme state, localStorage, system preference
-- `src/components/ThemeToggle.tsx` - Toggle button with FiSun/FiMoon icons
-- `src/components/FixedThemeToggle.tsx` - Fixed position wrapper for desktop
+- `src/features/theme/ThemeContext.tsx` - Theme state, localStorage, system preference
+- `src/features/theme/ThemeToggle.tsx` - Toggle button with FiSun/FiMoon icons
+- `src/features/theme/FixedThemeToggle.tsx` - Fixed position wrapper for desktop
 - `src/app/layout.tsx` - ThemeProvider wrapper + inline FOIT prevention script
 
 ### Next.js Configuration Notes
@@ -106,7 +131,7 @@ export type MyFrontmatter = {
 ### Development Notes
 - **Package Manager**: Uses `pnpm` (not npm/yarn)
 - **Versions**: Next.js 16.1.2, React 19.2.1, TypeScript 5.9.3
-- **Directory Structure**: `src/app` (routes), `src/components`, `src/contexts`, `src/styles`, `src/utils`
+- **Directory Structure**: vertical/feature-based — see Code Organization below
 - **ESLint**: v9.39.1 with native Next.js 16 flat config support (no FlatCompat needed)
 - **ESLint Config**: Uses `eslint-config-next/core-web-vitals` directly in flat config format
 - **TypeScript-ESLint**: Works alongside ESLint - parser understands TypeScript, plugin provides TypeScript-specific rules
