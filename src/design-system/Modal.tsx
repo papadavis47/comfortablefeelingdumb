@@ -30,7 +30,7 @@ function Modal({ closeModal, isOpen }: ModalProps) {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ type: 'spring', duration: 0.4, bounce: 0.15 }}
               >
-                <DialogPanel className="w-full max-w-lg sm:max-w-xl md:max-w-2xl p-6 sm:p-8 md:p-10 text-center shadow-2xl rounded-2xl bg-original border border-subtle/10">
+                <DialogPanel className="w-full max-w-lg sm:max-w-xl md:max-w-2xl p-6 sm:p-8 md:p-10 text-center shadow-2xl rounded-2xl bg-surface border border-border">
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ function Modal({ closeModal, isOpen }: ModalProps) {
                   >
                     <DialogTitle
                       as="h3"
-                      className="text-3xl font-semibold leading-tight text-strongest md:text-4xl"
+                      className="text-title-sm text-heading"
                     >
                       About This Blog
                     </DialogTitle>
@@ -50,7 +50,7 @@ function Modal({ closeModal, isOpen }: ModalProps) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25, duration: 0.3 }}
                   >
-                    <p className="text-base font-medium leading-relaxed italic text-strongest sm:text-lg md:text-xl sm:text-justify">
+                    <p className="text-body text-fg text-left">
                       These articles document my attempts to go beyond what is
                       comfortable to me as a software engineer. I try to be at
                       peace with the daily feeling of being at the edge of my
@@ -72,7 +72,7 @@ function Modal({ closeModal, isOpen }: ModalProps) {
                   >
                     <button
                       type="button"
-                      className="inline-flex justify-center px-4 py-2 text-sm font-medium text-strongest bg-subjects/20 border border-transparent rounded-md hover:bg-subjects/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-subjects focus-visible:ring-offset-2"
+                      className="inline-flex justify-center px-4 py-2 text-sm font-medium text-accent bg-accent-bg border border-transparent rounded-md hover:bg-accent/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
                       Close

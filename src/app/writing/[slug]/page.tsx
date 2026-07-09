@@ -26,12 +26,12 @@ async function PostPage(props: {
   const { frontMatter, content, timeToRead } = await loadBlogPost(params.slug)
 
   return (
-    <div className="px-6 pt-2.5 pb-10 mx-auto my-6 max-w-[900px]">
+    <div className="px-6 pt-2.5 pb-10 mx-auto my-6 max-w-[44rem]">
       <CoolLetters>{frontMatter.title}</CoolLetters>
-      <span className="block md:py-4 pb-2 pt-4 md:my-6 my-2 md:text-lg text-md italic text-subtle">
+      <span className="block mt-4 text-meta font-mono text-fg-muted">
         {frontMatter.date}
       </span>
-      <span className="block py-4 my-2 text-md md:text-lg  text-subtle">
+      <span className="block mt-1 mb-8 text-meta font-mono text-fg-muted">
         {timeToRead}
       </span>
       <MDXRemote source={content} components={COMPONENT_MAP} options={{ blockJS: false }} />

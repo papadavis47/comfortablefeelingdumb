@@ -14,7 +14,7 @@ export default function WritingParagraph({
   ...props
 }: WritingParagraphProps): React.JSX.Element {
   return (
-    <p className="text-lg lg:text-xl text-strong py-3" {...props}>
+    <p className="text-body text-fg py-3" {...props}>
       {children}
     </p>
   )

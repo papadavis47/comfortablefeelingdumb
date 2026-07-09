@@ -50,13 +50,13 @@ function NavBar(): React.JSX.Element {
     <>
       {isOpen ? <Modal isOpen={isOpen} closeModal={closeModal} /> : null}
       <nav
-        className={`sticky z-50 bg-original ${
+        className={`sticky z-50 bg-surface ${
           isVisible ? 'top-4' : '-top-20'
-        } mx-auto mb-10 mt-4 w-full rounded-lg border-2 px-6 py-4 pt-4 shadow-lg backdrop-blur-md transition ease-linear sm:w-1/2`}
+        } mx-auto mb-10 mt-4 w-full rounded-lg border border-border px-6 py-4 pt-4 shadow-sm backdrop-blur-md transition ease-linear sm:w-1/2`}
       >
-        <div className="flex justify-between text-darkness sm:mx-auto sm:max-w-7xl">
+        <div className="flex justify-between text-fg-muted sm:mx-auto sm:max-w-7xl">
           {/* left */}
-          <div className="hover:text-shift">
+          <div className="hover:text-accent">
             <Link href="/" aria-label="Home">
               <ImHome size={30} />
             </Link>
@@ -67,7 +67,7 @@ function NavBar(): React.JSX.Element {
               href="https://bsky.app/profile/johnwilliamdavis.com"
               target="_blank"
               rel="noreferrer noopener"
-              className="hover:text-shift"
+              className="hover:text-accent"
               aria-label="Bluesky profile"
             >
               <SiBluesky size={30} />
@@ -75,7 +75,7 @@ function NavBar(): React.JSX.Element {
             <a
               href="https://github.com/papadavis47/comfortablefeelingdumb"
               target="_blank"
-              className="hover:text-shift"
+              className="hover:text-accent"
               rel="noreferrer noopener"
               aria-label="GitHub repository"
             >
@@ -85,7 +85,7 @@ function NavBar(): React.JSX.Element {
               href="https://stackoverflow.com/users/9111781/jwdavis"
               target="_blank"
               rel="noreferrer noopener"
-              className="hover:text-shift"
+              className="hover:text-accent"
               aria-label="StackOverflow profile"
             >
               <SiStackoverflow size={30} />
@@ -94,7 +94,7 @@ function NavBar(): React.JSX.Element {
           {/* right */}
           <div className={`${isOpen ? 'invisible' : null}`}>
             <button
-              className="hover:text-shift"
+              className="hover:text-accent"
               onClick={toggleModal}
               aria-label="About this blog"
               aria-haspopup="dialog"

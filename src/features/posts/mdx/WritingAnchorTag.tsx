@@ -8,7 +8,7 @@ export default function WritingAnchorTag({
     <a
       target="_blank"
       rel="noreferrer noopener"
-      className="text-lg lg:text-xl text-strong py-3 inline underline underline-offset-3 font-bold"
+      className="text-accent font-medium underline underline-offset-4 decoration-accent/40 hover:decoration-accent"
       {...rest}
     >
       {children}

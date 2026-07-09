@@ -52,7 +52,7 @@ function LikeButton({ slug }: LikeButtonProps) {
     <button
       onClick={handleLike}
       disabled={hasLiked || isLoading}
-      className="flex items-center gap-2 text-lg md:text-xl text-strong cursor-pointer disabled:cursor-default"
+      className="flex items-center gap-2 text-base text-fg cursor-pointer disabled:cursor-default"
       aria-label={hasLiked ? 'Already liked' : 'Like this post'}
     >
       <AnimatePresence mode="wait">
@@ -63,7 +63,7 @@ function LikeButton({ slug }: LikeButtonProps) {
             animate={{ scale: 1 }}
             transition={{ type: 'spring', stiffness: 500, damping: 15 }}
           >
-            <FaThumbsUp className="text-strong" />
+            <FaThumbsUp className="text-accent" />
           </motion.span>
         ) : (
           <motion.span

@@ -16,7 +16,7 @@ export default function WritingSubHeading({
 }: WritingSubHeadingProps): React.JSX.Element {
   return (
     <h2
-      className="text-2xl lg:text-3xl text-strongest my-4 font-bold"
+      className="text-h2 text-heading mt-10 mb-4"
       {...props}
     >
       {children}

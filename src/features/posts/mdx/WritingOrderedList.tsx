@@ -15,7 +15,7 @@ export default function WritingOrderedList({
 }: WritingOrderedListProps): React.JSX.Element {
   return (
     <ol
-      className="text-lg lg:text-xl font-semibold italic text-strongest py-4"
+      className="text-body text-fg py-3 list-decimal pl-6 marker:text-fg-muted"
       {...props}
     >
       {children}

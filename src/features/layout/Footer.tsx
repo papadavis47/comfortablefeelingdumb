@@ -4,13 +4,13 @@ import ThemeToggle from '@/features/theme/ThemeToggle'
 
 function Footer(): React.JSX.Element {
   return (
-    <footer className="w-full py-4 font-semibold bg-footer text-darkness">
+    <footer className="w-full py-4 bg-surface border-t border-border text-fg-muted">
       <div className="px-6 py-4 mx-auto md:max-w-4xl">
-        <p className="mt-2 md:text-lg text-md">
+        <p className="mt-2 text-sm">
           Built with{' '}
           <a
             href="https://typescriptlang.org"
-            className="hover:text-subjects"
+            className="hover:text-accent"
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -19,7 +19,7 @@ function Footer(): React.JSX.Element {
           ,{' '}
           <a
             href="https://nextjs.org"
-            className="hover:text-subjects"
+            className="hover:text-accent"
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -28,7 +28,7 @@ function Footer(): React.JSX.Element {
           ,{' '}
           <a
             href="https://tailwindcss.com"
-            className="hover:text-subjects"
+            className="hover:text-accent"
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -37,19 +37,19 @@ function Footer(): React.JSX.Element {
           and{' '}
           <a
             href="https://mdxjs.com/"
-            className="hover:text-subjects"
+            className="hover:text-accent"
             target="_blank"
             rel="noreferrer noopener"
           >
             MDX
           </a>
         </p>
-        <div className="py-3 md:pb-4 flex items-center justify-between text-md">
+        <div className="py-3 md:pb-4 flex items-center justify-between text-sm">
           <a
             href="https://www.johnwilliamdavis.com"
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-block hover:text-subjects"
+            className="inline-block hover:text-accent"
           >
             <span>
               &copy;&nbsp;
