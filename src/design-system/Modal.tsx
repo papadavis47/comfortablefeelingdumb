@@ -12,7 +12,7 @@ function Modal({ closeModal, isOpen }: ModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <Dialog as="div" className="relative z-10" onClose={closeModal} open>
+        <Dialog as="div" className="relative z-[60]" onClose={closeModal} open>
           {/* Backdrop with blur */}
           <motion.div
             className="fixed inset-0 bg-black/40 backdrop-blur-sm"
@@ -22,8 +22,8 @@ function Modal({ closeModal, isOpen }: ModalProps) {
             transition={{ duration: 0.3 }}
           />
 
-          <div className="fixed inset-0">
-            <div className="flex items-center justify-center min-h-full p-3 sm:p-4 text-center">
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex items-center justify-center min-h-full p-4 py-8 sm:p-6 text-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}

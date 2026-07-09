@@ -8,6 +8,7 @@ type TypewriterTextProps = {
   delay?: number
   staggerDuration?: number
   className?: string
+  gradient?: boolean
 }
 
 const containerVariants: Variants = {
@@ -30,10 +31,25 @@ export function TypewriterText({
   delay = 0,
   staggerDuration = 0.03,
   className,
+  gradient = false,
 }: TypewriterTextProps): React.JSX.Element {
   // Split into words (preserving spaces as separate elements for animation)
   const words = text.split(/(\s+)/)
   let charIndex = 0
+
+  // Gradient is faked with a per-letter color-mix between the accent tokens.
+  // A real bg-clip-text gradient is not an option here: Safari won't paint a
+  // text-clipped background through the inline-block word wrappers and
+  // opacity-animated letter spans, leaving the text invisible on iOS.
+  const lastIndex = Math.max(text.length - 1, 1)
+  const letterColor = (index: number): React.CSSProperties | undefined =>
+    gradient
+      ? {
+          color: `color-mix(in oklch, var(--color-accent) ${Math.round(
+            100 - (index / lastIndex) * 100,
+          )}%, var(--color-accent-2))`,
+        }
+      : undefined
 
   return (
     <motion.span
@@ -62,7 +78,11 @@ export function TypewriterText({
             {word.split('').map((char) => {
               const key = charIndex++
               return (
-                <motion.span key={key} variants={letterVariants}>
+                <motion.span
+                  key={key}
+                  variants={letterVariants}
+                  style={letterColor(key)}
+                >
                   {char}
                 </motion.span>
               )

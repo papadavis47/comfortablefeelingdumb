@@ -18,7 +18,8 @@ function LandingTitle(): React.JSX.Element {
           text="( and trail running )"
           delay={5.0}
           staggerDuration={0.05}
-          className="italic bg-linear-to-r from-accent to-accent-2 bg-clip-text text-transparent"
+          className="italic"
+          gradient
         />
       </h2>
     </div>
