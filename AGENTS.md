@@ -129,7 +129,7 @@ export type MyFrontmatter = {
 - `src/app/layout.tsx` - ThemeProvider wrapper + inline FOIT prevention script
 
 ### Next.js Configuration Notes
-- **Version**: Next.js 16.1.2
+- **Version**: Next.js 16.2.10
 - **MDX Integration**: Requires `transpilePackages: ['next-mdx-remote']` for proper compilation
 - **File Tracing**: Includes `/posts/**/*` for deployment optimization
 - **App Router**: Uses Next.js App Router architecture with React Server Components
@@ -141,12 +141,12 @@ export type MyFrontmatter = {
 
 ### Development Notes
 - **Package Manager**: Uses `pnpm` (not npm/yarn)
-- **Versions**: Next.js 16.1.2, React 19.2.1, TypeScript 5.9.3
+- **Versions**: Next.js 16.2.10, React 19.2.7, TypeScript 6.0.3
 - **Directory Structure**: vertical/feature-based — see Code Organization below
-- **ESLint**: v9.39.1 with native Next.js 16 flat config support (no FlatCompat needed)
+- **ESLint**: v9.39.4 with native Next.js 16 flat config support (no FlatCompat needed)
 - **ESLint Config**: Uses `eslint-config-next/core-web-vitals` directly in flat config format
 - **TypeScript-ESLint**: Works alongside ESLint - parser understands TypeScript, plugin provides TypeScript-specific rules
-- **Node Types**: Uses @types/node v24.10.2 and @types/react v19.2.7
+- **Node Types**: Uses @types/node v26.1.0 and @types/react v19.2.17
 - **Import Strategy**: Prefers `import type` for type-only imports (enforced by ESLint rule)
 
 ## Skills
