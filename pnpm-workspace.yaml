@@ -2,3 +2,9 @@ allowBuilds:
   esbuild: true
   sharp: true
   unrs-resolver: true
+
+# Transitive-only bumps to clear Dependabot advisories. Both are dev/build-time
+# deps; drop an entry once a direct dependency requires the patched range itself.
+overrides:
+  esbuild: ^0.28.1 # dev-server file read (Windows)
+  postcss: ^8.5.10 # XSS via unescaped </style> in stringify; next pins 8.4.31
