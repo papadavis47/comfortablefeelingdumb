@@ -20,7 +20,7 @@ export default function Image(): ImageResponse {
           alignItems: 'center',
           justifyContent: 'center',
           padding: '60px',
-          background: 'linear-gradient(135deg, #faf9f7 0%, #e8e4f0 25%, #d4e4f7 50%, #e0d4f0 75%, #f7e4e8 100%)',
+          background: 'linear-gradient(135deg, #f9f8f5 0%, #fde4d4 40%, #ffe4e3 75%, #f9f8f5 100%)',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -34,7 +34,7 @@ export default function Image(): ImageResponse {
             width: '450px',
             height: '450px',
             borderRadius: '50%',
-            background: 'rgba(147, 112, 219, 0.2)',
+            background: 'rgba(151, 81, 36, 0.16)',
             display: 'flex',
           }}
         />
@@ -46,7 +46,7 @@ export default function Image(): ImageResponse {
             width: '550px',
             height: '550px',
             borderRadius: '50%',
-            background: 'rgba(100, 149, 237, 0.15)',
+            background: 'rgba(166, 75, 78, 0.14)',
             display: 'flex',
           }}
         />
@@ -58,7 +58,7 @@ export default function Image(): ImageResponse {
             width: '180px',
             height: '180px',
             borderRadius: '50%',
-            background: 'rgba(219, 112, 147, 0.2)',
+            background: 'rgba(151, 81, 36, 0.1)',
             display: 'flex',
           }}
         />
@@ -70,7 +70,7 @@ export default function Image(): ImageResponse {
             width: '120px',
             height: '120px',
             borderRadius: '50%',
-            background: 'rgba(147, 112, 219, 0.15)',
+            background: 'rgba(158, 122, 35, 0.12)',
             display: 'flex',
           }}
         />
@@ -80,7 +80,7 @@ export default function Image(): ImageResponse {
           style={{
             fontSize: '84px',
             fontWeight: 800,
-            color: '#3d3d5c',
+            color: '#161b24',
             textAlign: 'center',
             lineHeight: 1.1,
             margin: 0,
@@ -94,7 +94,7 @@ export default function Image(): ImageResponse {
         <p
           style={{
             fontSize: '28px',
-            color: '#6b5b7a',
+            color: '#5f636c',
             marginTop: '32px',
             textAlign: 'center',
           }}

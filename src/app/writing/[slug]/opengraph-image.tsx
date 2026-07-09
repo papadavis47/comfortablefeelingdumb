@@ -27,7 +27,7 @@ export default async function Image({
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: '60px',
-          background: 'linear-gradient(135deg, #faf9f7 0%, #e8e4f0 25%, #d4e4f7 50%, #e0d4f0 75%, #f7e4e8 100%)',
+          background: 'linear-gradient(135deg, #f9f8f5 0%, #fde4d4 40%, #ffe4e3 75%, #f9f8f5 100%)',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -41,7 +41,7 @@ export default async function Image({
             width: '400px',
             height: '400px',
             borderRadius: '50%',
-            background: 'rgba(147, 112, 219, 0.2)',
+            background: 'rgba(151, 81, 36, 0.16)',
             display: 'flex',
           }}
         />
@@ -53,7 +53,7 @@ export default async function Image({
             width: '500px',
             height: '500px',
             borderRadius: '50%',
-            background: 'rgba(100, 149, 237, 0.15)',
+            background: 'rgba(166, 75, 78, 0.14)',
             display: 'flex',
           }}
         />
@@ -65,7 +65,7 @@ export default async function Image({
             width: '200px',
             height: '200px',
             borderRadius: '50%',
-            background: 'rgba(219, 112, 147, 0.2)',
+            background: 'rgba(158, 122, 35, 0.12)',
             display: 'flex',
           }}
         />
@@ -81,7 +81,7 @@ export default async function Image({
           <span
             style={{
               fontSize: '28px',
-              color: '#6b5b7a',
+              color: '#975124',
               fontWeight: 500,
               letterSpacing: '0.05em',
             }}
@@ -91,7 +91,7 @@ export default async function Image({
           <span
             style={{
               fontSize: '18px',
-              color: '#8a8aaa',
+              color: '#5f636c',
             }}
           >
             A blog about software engineering ( and trail running )
@@ -111,7 +111,7 @@ export default async function Image({
             style={{
               fontSize: frontMatter.title.length > 40 ? '56px' : '72px',
               fontWeight: 700,
-              color: '#3d3d5c',
+              color: '#161b24',
               lineHeight: 1.1,
               margin: 0,
             }}
@@ -122,7 +122,7 @@ export default async function Image({
             <p
               style={{
                 fontSize: '26px',
-                color: '#5b5b7a',
+                color: '#5f636c',
                 lineHeight: 1.4,
                 margin: 0,
                 maxWidth: '800px',
@@ -139,7 +139,7 @@ export default async function Image({
         <span
           style={{
             fontSize: '20px',
-            color: '#7a7a9a',
+            color: '#5f636c',
           }}
         >
           {frontMatter.date}
