@@ -1,6 +1,7 @@
 import { type Metadata } from 'next'
 import '@/styles/main.css'
 import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 import Footer from '@/features/layout/Footer'
 import NavBar from '@/features/layout/NavBar'
 import FixedThemeToggle from '@/features/theme/FixedThemeToggle'
@@ -35,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable}`}
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -44,14 +45,14 @@ export default function RootLayout({
       <body className="h-full">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-original focus:px-4 focus:py-2 focus:text-strongest focus:shadow-lg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-surface focus:px-4 focus:py-2 focus:text-heading focus:shadow-lg"
         >
           Skip to main content
         </a>
         <ThemeProvider>
           <TransitionProvider>
             <FixedThemeToggle />
-            <div className="flex flex-col min-h-screen bg-background px-1.5 md:px-0">
+            <div className="flex flex-col min-h-screen bg-bg px-1.5 md:px-0">
               <NavBar />
               <main id="main-content" className="flex-1">{children}</main>
               <Footer />
