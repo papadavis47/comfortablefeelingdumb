@@ -92,15 +92,26 @@ export type MyFrontmatter = {
 }
 ```
 
-### Styling Approach
-- **Tailwind CSS v4**: Version 4.1.17 with custom color variables in OKLCH color space
-- **Responsive Design**: Mobile-first approach with `sm:`, `md:`, `lg:` breakpoints
-- **Custom Components**: Writing components have consistent styling for typography
-- **Theme**: Uses custom CSS variables for colors defined in main.css
-- **Dark Mode**: Full dark mode support with system preference detection
+### Styling Approach / Design Tokens
+- **Single source of truth**: ALL design tokens live in the `@theme` block of `src/styles/main.css` (Tailwind CSS v4). Change a token there → whole site updates. Do NOT hardcode colors/sizes in components.
+- **Semantic color roles** (OKLCH; light values in `@theme`, dark overrides in `.dark`):
+  - `bg` (page, warm paper) / `surface` (cards, nav, modal, footer) / `border`
+  - `fg` (body text) / `fg-muted` (meta, descriptions) / `heading`
+  - `accent` (rust/sienna — links, topic hashtags, pills, focus ring, all interactive) / `accent-2` (raspberry — gradient end only, pairs w/ accent in `from-accent to-accent-2`) / `accent-bg` (tinted pill/button backgrounds)
+- **One accent family only** — no second hue. Whimsy budget: title gradient + "( and trail running )" tagline words.
+- **Dark mode values are deliberate**: bg oklch ~26% blue-tinted (NOT near-black), text 88% (NOT white) — calibrated against joshwcomeau/mitchellh/tkdodo. Elevation via surface lightness + borders, not shadows. All fg/bg token pairs pass WCAG AA (verified both modes).
+- **Type scale** — custom `--text-*` tokens carry size + line-height + tracking + weight, generating utilities:
+  - `text-body` 18px/1.7 (post prose, single size — no responsive bump) · `text-meta` 13px (mono meta: dates, read time, hashtags) · `text-h2` 24px (article headings) · `text-card-title` 20px (list titles) · `text-title`/`text-title-sm` 32/28px (post h1) · `text-display`/`text-display-sm` 52/36px (landing h1)
+  - Responsive steps by composing: `text-title-sm sm:text-title`, `text-display-sm lg:text-display`
+- **Fonts**: Geist Sans → `--font-sans`, Geist Mono → `--font-mono`, mapped in `@theme`; font vars set on `<html>` in layout.tsx. (Mapping is required — without it Tailwind falls back to system stack.)
+- **Post prose column**: `max-w-[44rem]` (~65ch at 18px)
+- **Code blocks**: `bright` with paired themes `github-light`/`github-dark-dimmed`, follows the `.dark` class via `lightSelector: 'html:not(.dark)'` (CodeSnippet.tsx)
+- **OG images** (`opengraph-image.tsx`, satori): can't read CSS vars — palette hardcoded as hex, keep in sync with tokens when accent changes
+- **Post list**: flat rows (no cards) — title / muted description / mono meta line `date · N min read · #topic #topic`, hairline dividers
+- **Responsive Design**: Mobile-first with `sm:`, `md:`, `lg:` breakpoints
 
 ### Dark Mode / Theming System
-- **Color Variables**: All colors defined in `/src/styles/main.css` using OKLCH in `@theme` block
+- **Color Variables**: semantic role tokens (see Styling Approach above) in `/src/styles/main.css` `@theme` block, OKLCH
 - **Dark Mode**: `.dark` class on `<html>` overrides CSS variables for dark theme
 - **Theme Context**: `/src/features/theme/ThemeContext.tsx` manages theme state
 - **Persistence**: User preference saved to localStorage (`theme-preference` key)
