@@ -10,9 +10,6 @@ import { debounce } from '@/lib/debounce'
 import Link from 'next/link'
 import Modal from '@/design-system/Modal'
 
-// REMOVED UNUSED IMPORTS: VscTwitter and FaSquareXTwitter were not being used
-// The strict mode caught these unused imports
-
 // PROPER COMPONENT TYPING: No props needed, but explicit return type helps
 function NavBar(): React.JSX.Element {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -34,7 +31,7 @@ function NavBar(): React.JSX.Element {
     setIsVisible(
       (prevScrollPos > currentScrollPos &&
         prevScrollPos - currentScrollPos > 50) ||
-        currentScrollPos < 10
+        currentScrollPos < 10,
     )
 
     setPrevScrollPos(currentScrollPos)

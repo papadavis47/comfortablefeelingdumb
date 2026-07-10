@@ -12,7 +12,7 @@ function Modal({ closeModal, isOpen }: ModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <Dialog as="div" className="relative z-[60]" onClose={closeModal} open>
+        <Dialog as="div" className="relative z-60" onClose={closeModal} open>
           {/* Backdrop with blur */}
           <motion.div
             className="fixed inset-0 bg-black/40 backdrop-blur-sm"
@@ -36,10 +36,7 @@ function Modal({ closeModal, isOpen }: ModalProps) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.15, duration: 0.3 }}
                   >
-                    <DialogTitle
-                      as="h3"
-                      className="text-title-sm text-heading"
-                    >
+                    <DialogTitle as="h3" className="text-title-sm text-heading">
                       About This Blog
                     </DialogTitle>
                   </motion.div>
