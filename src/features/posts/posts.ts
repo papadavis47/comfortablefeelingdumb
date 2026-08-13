@@ -120,5 +120,11 @@ export const loadBlogPost = React.cache(async function loadBlogPost(
     throw new Error(`Invalid frontmatter in blog post: ${slug}`)
   }
 
+  // getAllPosts hides drafts from listings, but the slug is still guessable.
+  // Refuse them here too so a draft isn't readable by direct URL.
+  if (frontMatter.isDraft) {
+    notFound()
+  }
+
   return { frontMatter, content, timeToRead }
 })

@@ -154,4 +154,14 @@ describe('loadBlogPost', () => {
 
     await expect(loadBlogPost('nonexistent')).rejects.toThrow('NEXT_NOT_FOUND')
   })
+
+  // Drafts are hidden from listings by getAllPosts, but the slug is still
+  // guessable — loadBlogPost must refuse them too, or the post (and its OG
+  // image, which shares this loader) stays publicly readable by direct URL.
+  it('calls notFound for a draft slug', async () => {
+    vi.mocked(fs.readdir).mockResolvedValue(['secret-draft.mdx'] as never)
+    vi.mocked(fs.readFile).mockResolvedValue(draftPost)
+
+    await expect(loadBlogPost('secret-draft')).rejects.toThrow('NEXT_NOT_FOUND')
+  })
 })
