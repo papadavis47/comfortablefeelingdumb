@@ -11,7 +11,7 @@ export default defineConfig({
     css: false,
     exclude: ['e2e/**', 'node_modules/**'],
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
   },
 })

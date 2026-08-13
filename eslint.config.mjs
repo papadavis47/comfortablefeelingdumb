@@ -10,6 +10,9 @@ const eslintConfig = [
       "out/**",
       ".pnpm-store/**",
       "build/**",
+      "coverage/**",
+      "test-results/**",
+      "playwright-report/**",
       "next-env.d.ts",
       "posts/**/*.mdx"  // Skip MDX files - they need special parsing
     ]

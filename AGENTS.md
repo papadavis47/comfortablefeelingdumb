@@ -129,7 +129,7 @@ export type MyFrontmatter = {
 - `src/app/layout.tsx` - ThemeProvider wrapper + inline FOIT prevention script
 
 ### Next.js Configuration Notes
-- **Version**: Next.js 16.2.10
+- **Version**: Next.js 16.3.0
 - **MDX Integration**: Requires `transpilePackages: ['next-mdx-remote']` for proper compilation
 - **File Tracing**: Includes `/posts/**/*` for deployment optimization
 - **App Router**: Uses Next.js App Router architecture with React Server Components
@@ -141,12 +141,15 @@ export type MyFrontmatter = {
 
 ### Development Notes
 - **Package Manager**: Uses `pnpm` (not npm/yarn)
-- **Versions**: Next.js 16.2.10, React 19.2.7, TypeScript 6.0.3
+- **Versions**: Next.js 16.3.0, React 19.2.8, TypeScript 6.0.3
 - **Directory Structure**: vertical/feature-based — see Code Organization below
-- **ESLint**: v9.39.4 with native Next.js 16 flat config support (no FlatCompat needed)
+- **ESLint**: v9.39.5 with native Next.js 16 flat config support (no FlatCompat needed)
 - **ESLint Config**: Uses `eslint-config-next/core-web-vitals` directly in flat config format
 - **TypeScript-ESLint**: Works alongside ESLint - parser understands TypeScript, plugin provides TypeScript-specific rules
-- **Node Types**: Uses @types/node v26.1.0 and @types/react v19.2.17
+- **Node Types**: Uses @types/node v26.2.0 and @types/react v19.2.18
+- **Held-back majors** (both blocked by `eslint-config-next`'s dependency tree — recheck on each Next release):
+  - `eslint` pinned to ^9 — eslint 10 crashes `eslint-plugin-react@7.37.5` (`getFilename is not a function`); that plugin's peer range still caps at `^9.7`.
+  - `typescript` pinned to ~6.0.x — TS 7 ships no JavaScript compiler API (its main export is just `lib/version.cjs`), and `typescript-eslint` declares `typescript: >=4.8.4 <6.1.0`. Installing TS 7 breaks `pnpm lint`. The codebase is already TS7-clean: check anytime with `pnpm type-check:ts7`.
 - **Import Strategy**: Prefers `import type` for type-only imports (enforced by ESLint rule)
 
 ## Skills
@@ -158,3 +161,13 @@ Reusable agent skills (agent-skills `SKILL.md` spec) live in this repo but are *
 - Both dirs are gitignored; add skills locally per machine.
 
 Current skills: `web-design-guidelines`.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

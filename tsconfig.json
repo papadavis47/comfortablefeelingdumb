@@ -21,8 +21,6 @@
     // ADDITIONAL STRICT CHECKS: These provide even more safety
     // Catches functions that don't return values on all code paths
     "noImplicitReturns": true,
-    // Prevents variables from being used before declaration
-    "noImplicitUseStrict": false,
     // Reports errors on unused local variables (helps catch typos and dead code)
     "noUnusedLocals": true,
     // Reports errors on unused function parameters
@@ -65,7 +63,7 @@
   ],
   "exclude": [
     "node_modules",
-    "vitest.config.ts",
+    "vitest.config.mts",
     "playwright.config.ts",
     "e2e"
   ]
