@@ -151,6 +151,8 @@ export type MyFrontmatter = {
   - `eslint` pinned to ^9 — eslint 10 crashes `eslint-plugin-react@7.37.5` (`getFilename is not a function`); that plugin's peer range still caps at `^9.7`.
   - `typescript` pinned to ~6.0.x — TS 7 ships no JavaScript compiler API (its main export is just `lib/version.cjs`), and `typescript-eslint` declares `typescript: >=4.8.4 <6.1.0`. Installing TS 7 breaks `pnpm lint`. The codebase is already TS7-clean: check anytime with `pnpm type-check:ts7`.
 - **Import Strategy**: Prefers `import type` for type-only imports (enforced by ESLint rule)
+- **CI**: `.github/workflows/ci.yml` runs type-check, lint, unit tests on PRs + pushes to main (no e2e — visual snapshots are machine-specific). Vercel builds previews separately.
+- **Dependabot**: `.github/dependabot.yml` — weekly npm updates (minor/patch grouped into one PR), monthly Actions updates. Ignore rules mirror the held-back majors above; remove them when unblocked. Security PRs still arrive immediately and ungrouped.
 
 ## Skills
 
