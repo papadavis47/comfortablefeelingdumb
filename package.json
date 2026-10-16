@@ -26,7 +26,7 @@
     "eslint-config-next": "16.4.0",
     "geist": "^1.7.2",
     "gray-matter": "^4.0.3",
-    "motion": "^13.1.0",
+    "motion": "^14.2.0",
     "next": "16.4.0",
     "next-mdx-remote": "^6.0.0",
     "next-transition-router": "^0.2.11",
